@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
 
@@ -19,226 +19,299 @@
       padding: 0;
     }
 
+    html,
     body {
-      min-height: 100vh;
-      background:
-        radial-gradient(circle at 50% 40%,
-          #fffdfb 0%,
-          #f8f0ed 45%,
-          #ead9d4 100%);
+      width: 100%;
+      min-height: 100%;
+    }
 
-      color: #5d4038;
+    body {
+      overflow: hidden;
 
       font-family: 'Montserrat', sans-serif;
 
-      overflow-x: hidden;
-    }
+      color: #654943;
 
-    /* Moldura delicada */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 18px;
-
-      border: 1px solid rgba(166, 120, 62, 0.45);
-
-      pointer-events: none;
-
-      z-index: 10;
-    }
-
-    /* Detalhe marsala */
-    .corner {
-      position: fixed;
-
-      width: 170px;
-      height: 170px;
-
-      border: 1px solid rgba(123, 48, 55, 0.16);
-
-      border-radius: 50%;
-
-      pointer-events: none;
-    }
-
-    .corner.top {
-      top: -110px;
-      left: -110px;
-    }
-
-    .corner.bottom {
-      bottom: -110px;
-      right: -110px;
+      background:
+        radial-gradient(
+          ellipse at 50% 45%,
+          rgba(255,255,255,0.96) 0%,
+          rgba(250,244,241,0.96) 42%,
+          rgba(239,224,219,0.98) 100%
+        );
     }
 
 
-    /* ==========================
+    /* =====================================
        TELA 1
-    ========================== */
+    ===================================== */
 
     .opening {
-      min-height: 100vh;
+
+      width: 100%;
+      height: 100svh;
+      min-height: 650px;
+
+      position: relative;
 
       display: flex;
       align-items: center;
       justify-content: center;
 
-      padding: 50px 25px;
+      overflow: hidden;
 
-      position: relative;
+      isolation: isolate;
     }
 
 
-    .opening-content {
-      width: 100%;
-      max-width: 430px;
+    /* =====================================
+       EFEITO DE ACETATO
+    ===================================== */
+
+    .opening::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 120%;
+      height: 70%;
+
+      left: -10%;
+      top: 15%;
+
+      background:
+        radial-gradient(
+          ellipse,
+          rgba(255,255,255,0.75) 0%,
+          rgba(255,255,255,0) 65%
+        );
+
+      filter: blur(18px);
+
+      opacity: .75;
+
+      animation: lightMove 8s ease-in-out infinite alternate;
+
+      z-index: -2;
+    }
+
+
+    @keyframes lightMove {
+
+      from {
+        transform: translateX(-5%);
+      }
+
+      to {
+        transform: translateX(5%);
+      }
+
+    }
+
+
+    /* =====================================
+       MOLDURA
+    ===================================== */
+
+    .frame {
+
+      position: absolute;
+
+      inset: 13px;
+
+      border: 1px solid rgba(157,112,61,.38);
+
+      pointer-events: none;
+
+      z-index: 5;
+    }
+
+
+    .frame::before {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 7px;
+
+      border: 1px solid rgba(157,112,61,.08);
+    }
+
+
+    /* =====================================
+       ORNAMENTOS
+    ===================================== */
+
+    .ornament {
+
+      position: absolute;
+
+      width: 145px;
+      height: 145px;
+
+      opacity: .34;
+
+      pointer-events: none;
+
+      z-index: -1;
+    }
+
+
+    .ornament::before,
+    .ornament::after {
+
+      content: "";
+
+      position: absolute;
+
+      border: 1px solid #a8793e;
+
+      border-radius: 100% 0 100% 0;
+
+      transform: rotate(35deg);
+
+    }
+
+
+    .ornament::before {
+
+      width: 105px;
+      height: 45px;
+
+      top: 25px;
+      left: 5px;
+    }
+
+
+    .ornament::after {
+
+      width: 75px;
+      height: 35px;
+
+      top: 65px;
+      left: 35px;
+
+      transform: rotate(-15deg);
+    }
+
+
+    .ornament.top-left {
+
+      top: -25px;
+      left: -20px;
+
+      transform: rotate(-15deg);
+    }
+
+
+    .ornament.bottom-right {
+
+      bottom: -30px;
+      right: -20px;
+
+      transform: rotate(165deg);
+    }
+
+
+    /* =====================================
+       CONTEÚDO
+    ===================================== */
+
+    .content {
+
+      width: min(88%, 420px);
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      justify-content: center;
 
       text-align: center;
 
-      animation: entrance 1.8s ease forwards;
+      padding: 35px 0;
+
+      animation: contentAppear 1.8s cubic-bezier(.22,.61,.36,1) both;
+
     }
 
 
-    /* frase superior */
+    @keyframes contentAppear {
+
+      from {
+
+        opacity: 0;
+
+        transform:
+          translateY(22px)
+          scale(.98);
+
+      }
+
+      to {
+
+        opacity: 1;
+
+        transform:
+          translateY(0)
+          scale(1);
+
+      }
+
+    }
+
+
+    /* =====================================
+       FRASE
+    ===================================== */
 
     .intro {
-      font-family: 'Montserrat', sans-serif;
 
-      font-size: 10px;
+      color: #96766e;
 
-      letter-spacing: 3px;
+      font-size: 9px;
+
+      font-weight: 400;
+
+      letter-spacing: 3.2px;
 
       line-height: 1.9;
 
       text-transform: uppercase;
 
-      color: #8b6259;
+      margin-bottom: 27px;
 
-      margin-bottom: 35px;
+      animation: fadeUp 1.5s .15s both;
+
     }
 
 
-    /* MONOGRAMA */
+    /* =====================================
+       MONOGRAMA
+    ===================================== */
 
     .monogram {
+
       width: 205px;
 
-      max-width: 65vw;
+      max-width: 57vw;
 
       height: auto;
 
       display: block;
 
-      margin: 0 auto 30px auto;
+      margin-bottom: 27px;
 
-      filter: drop-shadow(
-        0 5px 12px rgba(125, 83, 39, 0.12)
-      );
+      object-fit: contain;
 
-      animation:
-        monogramAppear 2s ease forwards;
-    }
+      filter:
+        drop-shadow(0 4px 8px rgba(125,85,35,.12));
 
-
-    /* nomes */
-
-    .names {
-      font-family: 'Cormorant Garamond', serif;
-
-      font-size: clamp(38px, 10vw, 54px);
-
-      font-weight: 500;
-
-      line-height: 0.95;
-
-      color: #60433a;
-
-      letter-spacing: 1px;
-    }
-
-
-    .names .and {
-      font-size: 24px;
-
-      color: #a9793c;
-
-      font-style: italic;
-
-      margin: 9px 0;
-    }
-
-
-    /* data */
-
-    .date {
-      margin-top: 28px;
-
-      color: #a9793c;
-
-      font-size: 11px;
-
-      letter-spacing: 5px;
-    }
-
-
-    /* botão */
-
-    .enter {
-      margin-top: 45px;
-
-      padding: 14px 38px;
-
-      border-radius: 40px;
-
-      border: 1px solid #a9793c;
-
-      background: rgba(255,255,255,0.28);
-
-      color: #a9793c;
-
-      font-family: 'Montserrat', sans-serif;
-
-      font-size: 10px;
-
-      font-weight: 400;
-
-      letter-spacing: 3px;
-
-      cursor: pointer;
-
-      transition:
-        background .4s ease,
-        color .4s ease,
-        transform .4s ease;
-    }
-
-
-    .enter:hover {
-      background: #a9793c;
-
-      color: white;
-
-      transform: translateY(-2px);
-    }
-
-
-    /* animações */
-
-    @keyframes entrance {
-
-      from {
-        opacity: 0;
-
-        transform:
-          translateY(18px);
-      }
-
-      to {
-        opacity: 1;
-
-        transform:
-          translateY(0);
-      }
+      animation: monogramAppear 1.7s .25s cubic-bezier(.22,.61,.36,1) both;
 
     }
 
@@ -246,42 +319,261 @@
     @keyframes monogramAppear {
 
       from {
+
         opacity: 0;
 
         transform:
-          scale(.88);
+          scale(.82);
+
       }
 
       to {
+
         opacity: 1;
 
         transform:
           scale(1);
+
       }
 
     }
 
 
-    /* celular */
+    /* =====================================
+       NOMES
+    ===================================== */
 
-    @media (max-width: 500px) {
+    .names {
 
-      body::before {
-        inset: 12px;
+      font-family: 'Cormorant Garamond', serif;
+
+      color: #62453e;
+
+      font-size: clamp(43px, 11vw, 57px);
+
+      font-weight: 500;
+
+      line-height: .88;
+
+      letter-spacing: .5px;
+
+      animation: fadeUp 1.5s .45s both;
+
+    }
+
+
+    .names .and {
+
+      color: #a8793e;
+
+      font-family: 'Cormorant Garamond', serif;
+
+      font-size: 25px;
+
+      font-style: italic;
+
+      line-height: 1;
+
+      margin: 12px 0;
+
+    }
+
+
+    /* =====================================
+       DATA
+    ===================================== */
+
+    .date {
+
+      margin-top: 29px;
+
+      color: #a8793e;
+
+      font-size: 10px;
+
+      font-weight: 400;
+
+      letter-spacing: 5px;
+
+      animation: fadeUp 1.5s .6s both;
+
+    }
+
+
+    /* =====================================
+       BOTÃO
+    ===================================== */
+
+    .enter {
+
+      position: relative;
+
+      margin-top: 42px;
+
+      min-width: 190px;
+
+      padding: 15px 30px;
+
+      border: 1px solid rgba(160,116,62,.72);
+
+      border-radius: 40px;
+
+      background:
+        rgba(255,255,255,.30);
+
+      color: #a8793e;
+
+      font-family: 'Montserrat', sans-serif;
+
+      font-size: 9px;
+
+      font-weight: 400;
+
+      letter-spacing: 3px;
+
+      cursor: pointer;
+
+      -webkit-tap-highlight-color: transparent;
+
+      transition:
+        transform .35s ease,
+        background .35s ease,
+        box-shadow .35s ease;
+
+      animation: fadeUp 1.5s .75s both;
+
+    }
+
+
+    .enter::after {
+
+      content: "";
+
+      position: absolute;
+
+      inset: -5px;
+
+      border: 1px solid rgba(160,116,62,.10);
+
+      border-radius: 40px;
+
+      transition: .35s ease;
+
+    }
+
+
+    .enter:hover,
+    .enter:active {
+
+      transform: translateY(-2px);
+
+      background: rgba(168,121,62,.10);
+
+      box-shadow:
+        0 8px 25px rgba(130,85,40,.10);
+
+    }
+
+
+    .enter:hover::after {
+
+      inset: -8px;
+
+      opacity: .7;
+
+    }
+
+
+    /* =====================================
+       ANIMAÇÃO GERAL
+    ===================================== */
+
+    @keyframes fadeUp {
+
+      from {
+
+        opacity: 0;
+
+        transform:
+          translateY(15px);
+
+      }
+
+      to {
+
+        opacity: 1;
+
+        transform:
+          translateY(0);
+
+      }
+
+    }
+
+
+    /* =====================================
+       CELULARES PEQUENOS
+    ===================================== */
+
+    @media (max-height: 720px) {
+
+      .content {
+
+        transform: scale(.88);
+
+      }
+
+    }
+
+
+    @media (max-width: 380px) {
+
+      .monogram {
+
+        width: 180px;
+
+      }
+
+      .names {
+
+        font-size: 40px;
+
       }
 
       .intro {
-        font-size: 9px;
 
-        letter-spacing: 2.4px;
-      }
+        font-size: 8px;
 
-      .monogram {
-        width: 175px;
+        letter-spacing: 2.5px;
+
       }
 
       .date {
+
         letter-spacing: 4px;
+
+      }
+
+    }
+
+
+    /* =====================================
+       DESKTOP
+       apenas como adaptação
+    ===================================== */
+
+    @media (min-width: 700px) {
+
+      .content {
+
+        transform: scale(1.05);
+
+      }
+
+      .monogram {
+
+        width: 220px;
+
       }
 
     }
@@ -292,20 +584,21 @@
 
 <body>
 
-  <div class="corner top"></div>
-  <div class="corner bottom"></div>
-
-
   <main class="opening">
 
-    <div class="opening-content">
+    <div class="frame"></div>
+
+    <div class="ornament top-left"></div>
+
+    <div class="ornament bottom-right"></div>
+
+
+    <div class="content">
 
       <div class="intro">
         Uma nova história começa
       </div>
 
-
-      <!-- SEU MONOGRAMA ORIGINAL -->
 
       <img
         class="monogram"
@@ -318,7 +611,9 @@
 
         NATHALIA
 
-        <div class="and">&amp;</div>
+        <div class="and">
+          &amp;
+        </div>
 
         RAPHAEL
 
@@ -332,8 +627,8 @@
 
       <button
         class="enter"
-        id="enterButton"
         type="button"
+        id="enterButton"
       >
         ABRIR CONVITE
       </button>
@@ -349,7 +644,7 @@
       .getElementById("enterButton")
       .addEventListener("click", function () {
 
-        alert("Aqui vamos entrar na experiência do convite. ❤️");
+        alert("Em breve, o convite será aberto. ❤️");
 
       });
 
