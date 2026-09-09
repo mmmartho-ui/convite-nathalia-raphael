@@ -9,9 +9,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
+
+    /* ==============================
+       RESET
+    ============================== */
 
     * {
       box-sizing: border-box;
@@ -35,16 +42,16 @@
       background:
         radial-gradient(
           ellipse at 50% 45%,
-          rgba(255,255,255,0.96) 0%,
-          rgba(250,244,241,0.96) 42%,
+          rgba(255,255,255,0.97) 0%,
+          rgba(250,244,241,0.97) 42%,
           rgba(239,224,219,0.98) 100%
         );
     }
 
 
-    /* =====================================
-       TELA 1
-    ===================================== */
+    /* ==============================
+       TELA DE ABERTURA
+    ============================== */
 
     .opening {
 
@@ -64,9 +71,9 @@
     }
 
 
-    /* =====================================
-       EFEITO DE ACETATO
-    ===================================== */
+    /* ==============================
+       EFEITO DE LUZ / ACETATO
+    ============================== */
 
     .opening::before {
 
@@ -110,9 +117,9 @@
     }
 
 
-    /* =====================================
+    /* ==============================
        MOLDURA
-    ===================================== */
+    ============================== */
 
     .frame {
 
@@ -140,9 +147,9 @@
     }
 
 
-    /* =====================================
+    /* ==============================
        ORNAMENTOS
-    ===================================== */
+    ============================== */
 
     .ornament {
 
@@ -215,9 +222,9 @@
     }
 
 
-    /* =====================================
+    /* ==============================
        CONTEÚDO
-    ===================================== */
+    ============================== */
 
     .content {
 
@@ -235,7 +242,10 @@
 
       padding: 35px 0;
 
-      animation: contentAppear 1.8s cubic-bezier(.22,.61,.36,1) both;
+      animation:
+        contentAppear 1.8s
+        cubic-bezier(.22,.61,.36,1)
+        both;
 
     }
 
@@ -265,19 +275,19 @@
     }
 
 
-    /* =====================================
-       FRASE
-    ===================================== */
+    /* ==============================
+       TEXTO SUPERIOR
+    ============================== */
 
     .intro {
 
       color: #96766e;
 
-      font-size: 9px;
+      font-size: 11px;
 
       font-weight: 400;
 
-      letter-spacing: 3.2px;
+      letter-spacing: 3px;
 
       line-height: 1.9;
 
@@ -285,14 +295,15 @@
 
       margin-bottom: 27px;
 
-      animation: fadeUp 1.5s .15s both;
+      animation:
+        fadeUp 1.5s .15s both;
 
     }
 
 
-    /* =====================================
+    /* ==============================
        MONOGRAMA
-    ===================================== */
+    ============================== */
 
     .monogram {
 
@@ -309,9 +320,15 @@
       object-fit: contain;
 
       filter:
-        drop-shadow(0 4px 8px rgba(125,85,35,.12));
+        drop-shadow(
+          0 4px 8px
+          rgba(125,85,35,.12)
+        );
 
-      animation: monogramAppear 1.7s .25s cubic-bezier(.22,.61,.36,1) both;
+      animation:
+        monogramAppear 1.7s .25s
+        cubic-bezier(.22,.61,.36,1)
+        both;
 
     }
 
@@ -339,9 +356,9 @@
     }
 
 
-    /* =====================================
+    /* ==============================
        NOMES
-    ===================================== */
+    ============================== */
 
     .names {
 
@@ -349,7 +366,12 @@
 
       color: #62453e;
 
-      font-size: clamp(43px, 11vw, 57px);
+      font-size:
+        clamp(
+          43px,
+          11vw,
+          57px
+        );
 
       font-weight: 500;
 
@@ -357,7 +379,8 @@
 
       letter-spacing: .5px;
 
-      animation: fadeUp 1.5s .45s both;
+      animation:
+        fadeUp 1.5s .45s both;
 
     }
 
@@ -379,30 +402,33 @@
     }
 
 
-    /* =====================================
+    /* ==============================
        DATA
-    ===================================== */
+    ============================== */
 
     .date {
 
-      margin-top: 29px;
+      margin-top: 32px;
 
       color: #a8793e;
 
-      font-size: 10px;
+      font-size: 16px;
 
-      font-weight: 400;
+      font-weight: 500;
 
-      letter-spacing: 5px;
+      letter-spacing: 6px;
 
-      animation: fadeUp 1.5s .6s both;
+      line-height: 1.2;
+
+      animation:
+        fadeUp 1.5s .6s both;
 
     }
 
 
-    /* =====================================
+    /* ==============================
        BOTÃO
-    ===================================== */
+    ============================== */
 
     .enter {
 
@@ -414,7 +440,8 @@
 
       padding: 15px 30px;
 
-      border: 1px solid rgba(160,116,62,.72);
+      border: 1px solid
+        rgba(160,116,62,.72);
 
       border-radius: 40px;
 
@@ -433,14 +460,16 @@
 
       cursor: pointer;
 
-      -webkit-tap-highlight-color: transparent;
+      -webkit-tap-highlight-color:
+        transparent;
 
       transition:
         transform .35s ease,
         background .35s ease,
         box-shadow .35s ease;
 
-      animation: fadeUp 1.5s .75s both;
+      animation:
+        fadeUp 1.5s .75s both;
 
     }
 
@@ -453,7 +482,8 @@
 
       inset: -5px;
 
-      border: 1px solid rgba(160,116,62,.10);
+      border: 1px solid
+        rgba(160,116,62,.10);
 
       border-radius: 40px;
 
@@ -465,12 +495,15 @@
     .enter:hover,
     .enter:active {
 
-      transform: translateY(-2px);
+      transform:
+        translateY(-2px);
 
-      background: rgba(168,121,62,.10);
+      background:
+        rgba(168,121,62,.10);
 
       box-shadow:
-        0 8px 25px rgba(130,85,40,.10);
+        0 8px 25px
+        rgba(130,85,40,.10);
 
     }
 
@@ -484,9 +517,9 @@
     }
 
 
-    /* =====================================
-       ANIMAÇÃO GERAL
-    ===================================== */
+    /* ==============================
+       ANIMAÇÕES
+    ============================== */
 
     @keyframes fadeUp {
 
@@ -511,9 +544,9 @@
     }
 
 
-    /* =====================================
+    /* ==============================
        CELULARES PEQUENOS
-    ===================================== */
+    ============================== */
 
     @media (max-height: 720px) {
 
@@ -542,13 +575,15 @@
 
       .intro {
 
-        font-size: 8px;
+        font-size: 10px;
 
         letter-spacing: 2.5px;
 
       }
 
       .date {
+
+        font-size: 15px;
 
         letter-spacing: 4px;
 
@@ -557,10 +592,9 @@
     }
 
 
-    /* =====================================
+    /* ==============================
        DESKTOP
-       apenas como adaptação
-    ===================================== */
+    ============================== */
 
     @media (min-width: 700px) {
 
@@ -595,10 +629,15 @@
 
     <div class="content">
 
+
+      <!-- TEXTO SUPERIOR -->
+
       <div class="intro">
         Uma nova história começa
       </div>
 
+
+      <!-- SEU MONOGRAMA -->
 
       <img
         class="monogram"
@@ -606,6 +645,8 @@
         alt="Monograma Nathalia e Raphael"
       >
 
+
+      <!-- NOMES -->
 
       <div class="names">
 
@@ -620,10 +661,14 @@
       </div>
 
 
+      <!-- DATA -->
+
       <div class="date">
         14 · 11 · 2026
       </div>
 
+
+      <!-- BOTÃO -->
 
       <button
         class="enter"
@@ -642,11 +687,16 @@
 
     document
       .getElementById("enterButton")
-      .addEventListener("click", function () {
+      .addEventListener(
+        "click",
+        function () {
 
-        alert("Em breve, o convite será aberto. ❤️");
+          alert(
+            "Em breve, o convite será aberto. ❤️"
+          );
 
-      });
+        }
+      );
 
   </script>
 
