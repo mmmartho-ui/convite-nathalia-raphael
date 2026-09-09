@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Nathalia & Raphael</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 50% 40%,
+          #fffdfb 0%,
+          #f8f0ed 45%,
+          #ead9d4 100%);
+
+      color: #5d4038;
+
+      font-family: 'Montserrat', sans-serif;
+
+      overflow-x: hidden;
+    }
+
+    /* Moldura delicada */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 18px;
+
+      border: 1px solid rgba(166, 120, 62, 0.45);
+
+      pointer-events: none;
+
+      z-index: 10;
+    }
+
+    /* Detalhe marsala */
+    .corner {
+      position: fixed;
+
+      width: 170px;
+      height: 170px;
+
+      border: 1px solid rgba(123, 48, 55, 0.16);
+
+      border-radius: 50%;
+
+      pointer-events: none;
+    }
+
+    .corner.top {
+      top: -110px;
+      left: -110px;
+    }
+
+    .corner.bottom {
+      bottom: -110px;
+      right: -110px;
+    }
+
+
+    /* ==========================
+       TELA 1
+    ========================== */
+
+    .opening {
+      min-height: 100vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 50px 25px;
+
+      position: relative;
+    }
+
+
+    .opening-content {
+      width: 100%;
+      max-width: 430px;
+
+      text-align: center;
+
+      animation: entrance 1.8s ease forwards;
+    }
+
+
+    /* frase superior */
+
+    .intro {
+      font-family: 'Montserrat', sans-serif;
+
+      font-size: 10px;
+
+      letter-spacing: 3px;
+
+      line-height: 1.9;
+
+      text-transform: uppercase;
+
+      color: #8b6259;
+
+      margin-bottom: 35px;
+    }
+
+
+    /* MONOGRAMA */
+
+    .monogram {
+      width: 205px;
+
+      max-width: 65vw;
+
+      height: auto;
+
+      display: block;
+
+      margin: 0 auto 30px auto;
+
+      filter: drop-shadow(
+        0 5px 12px rgba(125, 83, 39, 0.12)
+      );
+
+      animation:
+        monogramAppear 2s ease forwards;
+    }
+
+
+    /* nomes */
+
+    .names {
+      font-family: 'Cormorant Garamond', serif;
+
+      font-size: clamp(38px, 10vw, 54px);
+
+      font-weight: 500;
+
+      line-height: 0.95;
+
+      color: #60433a;
+
+      letter-spacing: 1px;
+    }
+
+
+    .names .and {
+      font-size: 24px;
+
+      color: #a9793c;
+
+      font-style: italic;
+
+      margin: 9px 0;
+    }
+
+
+    /* data */
+
+    .date {
+      margin-top: 28px;
+
+      color: #a9793c;
+
+      font-size: 11px;
+
+      letter-spacing: 5px;
+    }
+
+
+    /* botão */
+
+    .enter {
+      margin-top: 45px;
+
+      padding: 14px 38px;
+
+      border-radius: 40px;
+
+      border: 1px solid #a9793c;
+
+      background: rgba(255,255,255,0.28);
+
+      color: #a9793c;
+
+      font-family: 'Montserrat', sans-serif;
+
+      font-size: 10px;
+
+      font-weight: 400;
+
+      letter-spacing: 3px;
+
+      cursor: pointer;
+
+      transition:
+        background .4s ease,
+        color .4s ease,
+        transform .4s ease;
+    }
+
+
+    .enter:hover {
+      background: #a9793c;
+
+      color: white;
+
+      transform: translateY(-2px);
+    }
+
+
+    /* animações */
+
+    @keyframes entrance {
+
+      from {
+        opacity: 0;
+
+        transform:
+          translateY(18px);
+      }
+
+      to {
+        opacity: 1;
+
+        transform:
+          translateY(0);
+      }
+
+    }
+
+
+    @keyframes monogramAppear {
+
+      from {
+        opacity: 0;
+
+        transform:
+          scale(.88);
+      }
+
+      to {
+        opacity: 1;
+
+        transform:
+          scale(1);
+      }
+
+    }
+
+
+    /* celular */
+
+    @media (max-width: 500px) {
+
+      body::before {
+        inset: 12px;
+      }
+
+      .intro {
+        font-size: 9px;
+
+        letter-spacing: 2.4px;
+      }
+
+      .monogram {
+        width: 175px;
+      }
+
+      .date {
+        letter-spacing: 4px;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <div class="corner top"></div>
+  <div class="corner bottom"></div>
+
+
+  <main class="opening">
+
+    <div class="opening-content">
+
+      <div class="intro">
+        Uma nova história começa
+      </div>
+
+
+      <!-- SEU MONOGRAMA ORIGINAL -->
+
+      <img
+        class="monogram"
+        src="monograma-NR-dourado.png"
+        alt="Monograma Nathalia e Raphael"
+      >
+
+
+      <div class="names">
+
+        NATHALIA
+
+        <div class="and">&amp;</div>
+
+        RAPHAEL
+
+      </div>
+
+
+      <div class="date">
+        14 · 11 · 2026
+      </div>
+
+
+      <button
+        class="enter"
+        id="enterButton"
+        type="button"
+      >
+        ABRIR CONVITE
+      </button>
+
+    </div>
+
+  </main>
+
+
+  <script>
+
+    document
+      .getElementById("enterButton")
+      .addEventListener("click", function () {
+
+        alert("Aqui vamos entrar na experiência do convite. ❤️");
+
+      });
+
+  </script>
+
+</body>
+</html>
