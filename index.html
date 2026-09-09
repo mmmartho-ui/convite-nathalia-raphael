@@ -2,23 +2,21 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
   <title>Nathalia & Raphael</title>
 
+  <!-- Fontes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap"
-    rel="stylesheet"
-  >
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
 
-    /* ==============================
-       RESET
-    ============================== */
+    /* =========================
+       CONFIGURAÇÕES GERAIS
+    ========================= */
 
     * {
       box-sizing: border-box;
@@ -26,588 +24,643 @@
       padding: 0;
     }
 
-    html,
-    body {
-      width: 100%;
-      min-height: 100%;
+    html {
+      scroll-behavior: smooth;
+      background: #f7f5f1;
     }
 
     body {
-      overflow: hidden;
+      width: 100%;
+      min-height: 100vh;
+      overflow-x: hidden;
+
+      background:
+        radial-gradient(
+          circle at 50% 20%,
+          rgba(255,255,255,0.95) 0%,
+          rgba(247,245,241,0.92) 45%,
+          rgba(239,235,227,0.95) 100%
+        );
+
+      color: #5d4634;
 
       font-family: 'Montserrat', sans-serif;
+    }
 
-      color: #654943;
-
-      background:
-        radial-gradient(
-          ellipse at 50% 45%,
-          rgba(255,255,255,0.97) 0%,
-          rgba(250,244,241,0.97) 42%,
-          rgba(239,224,219,0.98) 100%
-        );
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
     }
 
 
-    /* ==============================
-       TELA DE ABERTURA
-    ============================== */
+    /* =========================
+       CADA TELA
+    ========================= */
 
-    .opening {
-
-      width: 100%;
-      height: 100svh;
-      min-height: 650px;
-
+    .screen {
       position: relative;
 
+      width: 100%;
+      min-height: 100svh;
+
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
 
       overflow: hidden;
-
-      isolation: isolate;
     }
 
 
-    /* ==============================
-       EFEITO DE LUZ / ACETATO
-    ============================== */
-
-    .opening::before {
-
-      content: "";
-
-      position: absolute;
-
-      width: 120%;
-      height: 70%;
-
-      left: -10%;
-      top: 15%;
-
-      background:
-        radial-gradient(
-          ellipse,
-          rgba(255,255,255,0.75) 0%,
-          rgba(255,255,255,0) 65%
-        );
-
-      filter: blur(18px);
-
-      opacity: .75;
-
-      animation: lightMove 8s ease-in-out infinite alternate;
-
-      z-index: -2;
-    }
-
-
-    @keyframes lightMove {
-
-      from {
-        transform: translateX(-5%);
-      }
-
-      to {
-        transform: translateX(5%);
-      }
-
-    }
-
-
-    /* ==============================
+    /* =========================
        MOLDURA
-    ============================== */
+    ========================= */
 
     .frame {
-
       position: absolute;
 
-      inset: 13px;
+      top: 14px;
+      bottom: 14px;
+      left: 14px;
+      right: 14px;
 
-      border: 1px solid rgba(157,112,61,.38);
+      border: 1px solid rgba(151, 121, 77, 0.55);
 
       pointer-events: none;
-
-      z-index: 5;
     }
 
-
     .frame::before {
-
       content: "";
 
       position: absolute;
 
-      inset: 7px;
+      top: 7px;
+      bottom: 7px;
+      left: 7px;
+      right: 7px;
 
-      border: 1px solid rgba(157,112,61,.08);
+      border: 1px solid rgba(151, 121, 77, 0.18);
     }
 
 
-    /* ==============================
-       ORNAMENTOS
-    ============================== */
+    /* =========================
+       DETALHES DECORATIVOS
+    ========================= */
 
     .ornament {
-
       position: absolute;
 
-      width: 145px;
-      height: 145px;
+      width: 55px;
+      height: 55px;
 
-      opacity: .34;
+      opacity: 0.55;
 
       pointer-events: none;
-
-      z-index: -1;
     }
-
 
     .ornament::before,
     .ornament::after {
-
       content: "";
 
       position: absolute;
 
-      border: 1px solid #a8793e;
-
-      border-radius: 100% 0 100% 0;
-
-      transform: rotate(35deg);
-
+      background: #a88a5a;
     }
-
 
     .ornament::before {
-
-      width: 105px;
+      width: 1px;
       height: 45px;
+      left: 27px;
+      top: 5px;
 
-      top: 25px;
-      left: 5px;
+      transform: rotate(42deg);
     }
-
 
     .ornament::after {
+      width: 1px;
+      height: 30px;
+      left: 38px;
+      top: 16px;
 
-      width: 75px;
-      height: 35px;
-
-      top: 65px;
-      left: 35px;
-
-      transform: rotate(-15deg);
+      transform: rotate(-42deg);
     }
-
 
     .ornament.top-left {
-
-      top: -25px;
-      left: -20px;
-
-      transform: rotate(-15deg);
+      top: 28px;
+      left: 26px;
     }
 
+    .ornament.top-right {
+      top: 28px;
+      right: 26px;
+      transform: scaleX(-1);
+    }
+
+    .ornament.bottom-left {
+      bottom: 28px;
+      left: 26px;
+      transform: scaleY(-1);
+    }
 
     .ornament.bottom-right {
-
-      bottom: -30px;
-      right: -20px;
-
-      transform: rotate(165deg);
+      bottom: 28px;
+      right: 26px;
+      transform: scale(-1);
     }
 
 
-    /* ==============================
-       CONTEÚDO
-    ============================== */
+    /* =========================
+       TELA 1
+    ========================= */
 
-    .content {
-
-      width: min(88%, 420px);
-
-      display: flex;
-
+    #screen1 {
       flex-direction: column;
 
-      align-items: center;
-
-      justify-content: center;
+      padding:
+        max(55px, env(safe-area-inset-top))
+        30px
+        max(45px, env(safe-area-inset-bottom))
+        30px;
 
       text-align: center;
-
-      padding: 35px 0;
-
-      animation:
-        contentAppear 1.8s
-        cubic-bezier(.22,.61,.36,1)
-        both;
-
     }
-
-
-    @keyframes contentAppear {
-
-      from {
-
-        opacity: 0;
-
-        transform:
-          translateY(22px)
-          scale(.98);
-
-      }
-
-      to {
-
-        opacity: 1;
-
-        transform:
-          translateY(0)
-          scale(1);
-
-      }
-
-    }
-
-
-    /* ==============================
-       TEXTO SUPERIOR
-    ============================== */
 
     .intro {
+      margin-bottom: 22px;
 
-      color: #96766e;
-
+      font-family: 'Montserrat', sans-serif;
       font-size: 11px;
-
       font-weight: 400;
 
-      letter-spacing: 3px;
-
-      line-height: 1.9;
-
+      letter-spacing: 4px;
       text-transform: uppercase;
 
-      margin-bottom: 27px;
+      color: #8f7653;
 
-      animation:
-        fadeUp 1.5s .15s both;
-
+      animation: fadeUp 1.2s ease both;
     }
 
-
-    /* ==============================
-       MONOGRAMA
-    ============================== */
-
     .monogram {
-
-      width: 205px;
-
-      max-width: 57vw;
+      width: min(48vw, 210px);
+      max-width: 210px;
 
       height: auto;
 
-      display: block;
-
-      margin-bottom: 27px;
+      margin-bottom: 15px;
 
       object-fit: contain;
 
-      filter:
-        drop-shadow(
-          0 4px 8px
-          rgba(125,85,35,.12)
-        );
+      filter: drop-shadow(0 8px 10px rgba(92, 68, 38, 0.08));
 
-      animation:
-        monogramAppear 1.7s .25s
-        cubic-bezier(.22,.61,.36,1)
-        both;
-
+      animation: fadeIn 1.4s ease both;
     }
-
-
-    @keyframes monogramAppear {
-
-      from {
-
-        opacity: 0;
-
-        transform:
-          scale(.82);
-
-      }
-
-      to {
-
-        opacity: 1;
-
-        transform:
-          scale(1);
-
-      }
-
-    }
-
-
-    /* ==============================
-       NOMES
-    ============================== */
 
     .names {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
-      font-family: 'Cormorant Garamond', serif;
+      line-height: 0.88;
 
-      color: #62453e;
+      margin-bottom: 22px;
 
-      font-size:
-        clamp(
-          43px,
-          11vw,
-          57px
-        );
-
-      font-weight: 500;
-
-      line-height: .88;
-
-      letter-spacing: .5px;
-
-      animation:
-        fadeUp 1.5s .45s both;
-
+      animation: fadeUp 1.5s ease both;
     }
 
-
-    .names .and {
-
-      color: #a8793e;
-
+    .name {
       font-family: 'Cormorant Garamond', serif;
 
-      font-size: 25px;
+      font-size: clamp(42px, 12vw, 70px);
 
-      font-style: italic;
+      font-weight: 400;
 
-      line-height: 1;
+      letter-spacing: 1px;
 
-      margin: 12px 0;
-
+      color: #60442f;
     }
 
+    .ampersand {
+      font-family: 'Cormorant Garamond', serif;
 
-    /* ==============================
-       DATA
-    ============================== */
+      font-size: 27px;
+
+      margin: 7px 0;
+
+      color: #a48757;
+    }
 
     .date {
+      font-family: 'Cormorant Garamond', serif;
 
-      margin-top: 32px;
-
-      color: #a8793e;
-
-      font-size: 16px;
+      font-size: 18px;
 
       font-weight: 500;
 
       letter-spacing: 6px;
 
-      line-height: 1.2;
+      color: #9a7b4b;
 
-      animation:
-        fadeUp 1.5s .6s both;
+      margin-bottom: 28px;
 
+      animation: fadeUp 1.7s ease both;
     }
 
 
-    /* ==============================
-       BOTÃO
-    ============================== */
+    /* =========================
+       BOTÕES
+    ========================= */
 
-    .enter {
-
-      position: relative;
-
-      margin-top: 42px;
+    .gold-button {
+      appearance: none;
+      border: none;
 
       min-width: 190px;
+      min-height: 50px;
 
-      padding: 15px 30px;
+      padding: 13px 25px;
 
-      border: 1px solid
-        rgba(160,116,62,.72);
+      background: transparent;
 
-      border-radius: 40px;
+      border: 1px solid rgba(146, 113, 65, 0.75);
 
-      background:
-        rgba(255,255,255,.30);
-
-      color: #a8793e;
+      color: #755b3d;
 
       font-family: 'Montserrat', sans-serif;
 
-      font-size: 9px;
-
-      font-weight: 400;
+      font-size: 10px;
+      font-weight: 500;
 
       letter-spacing: 3px;
 
       cursor: pointer;
 
-      -webkit-tap-highlight-color:
-        transparent;
-
       transition:
-        transform .35s ease,
-        background .35s ease,
-        box-shadow .35s ease;
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
 
-      animation:
-        fadeUp 1.5s .75s both;
+      animation: fadeUp 1.9s ease both;
+    }
 
+    .gold-button:active {
+      transform: scale(0.97);
+      background: rgba(151, 120, 73, 0.12);
     }
 
 
-    .enter::after {
+    /* =========================
+       TELA 2
+    ========================= */
 
-      content: "";
+    #screen2 {
+      display: none;
 
-      position: absolute;
+      flex-direction: column;
 
-      inset: -5px;
+      padding:
+        max(48px, env(safe-area-inset-top))
+        30px
+        max(45px, env(safe-area-inset-bottom))
+        30px;
 
-      border: 1px solid
-        rgba(160,116,62,.10);
+      text-align: center;
+    }
 
-      border-radius: 40px;
+    #screen2.active {
+      display: flex;
 
-      transition: .35s ease;
+      animation: screenIn 0.9s ease both;
+    }
 
+    .screen2-content {
+      width: 100%;
+      max-width: 500px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .small-title {
+      font-family: 'Montserrat', sans-serif;
+
+      font-size: 10px;
+      font-weight: 500;
+
+      letter-spacing: 4px;
+
+      color: #9a7b4b;
+
+      margin-bottom: 16px;
+    }
+
+    .celebrate {
+      font-family: 'Cormorant Garamond', serif;
+
+      font-size: clamp(38px, 11vw, 58px);
+
+      font-weight: 400;
+
+      letter-spacing: 1px;
+
+      color: #674a34;
+
+      margin-bottom: 22px;
     }
 
 
-    .enter:hover,
-    .enter:active {
+    /* =========================
+       FOTO DO CASAL
+    ========================= */
 
-      transform:
-        translateY(-2px);
+    .couple-photo {
+      width: min(82vw, 370px);
 
-      background:
-        rgba(168,121,62,.10);
+      aspect-ratio: 0.82;
+
+      object-fit: cover;
+
+      object-position: center 30%;
+
+      border-radius: 180px 180px 25px 25px;
+
+      border: 1px solid rgba(157, 126, 78, 0.65);
+
+      padding: 6px;
+
+      background: rgba(255,255,255,0.55);
 
       box-shadow:
-        0 8px 25px
-        rgba(130,85,40,.10);
+        0 15px 35px rgba(69, 48, 28, 0.13);
 
+      margin-bottom: 24px;
     }
 
 
-    .enter:hover::after {
+    /* =========================
+       NOMES TELA 2
+    ========================= */
 
-      inset: -8px;
+    .names-second {
+      font-family: 'Cormorant Garamond', serif;
 
-      opacity: .7;
+      font-size: clamp(31px, 9vw, 48px);
 
+      font-weight: 400;
+
+      color: #60442f;
+
+      margin-bottom: 13px;
     }
 
 
-    /* ==============================
+    /* =========================
+       DATA / HORÁRIO
+    ========================= */
+
+    .event-date {
+      font-family: 'Cormorant Garamond', serif;
+
+      font-size: 22px;
+
+      letter-spacing: 4px;
+
+      color: #9a7b4b;
+
+      margin-bottom: 4px;
+    }
+
+    .event-time {
+      font-family: 'Montserrat', sans-serif;
+
+      font-size: 13px;
+
+      font-weight: 500;
+
+      letter-spacing: 3px;
+
+      color: #6a4b32;
+
+      margin-bottom: 21px;
+    }
+
+
+    /* =========================
+       LOCAL
+    ========================= */
+
+    .venue {
+      font-family: 'Montserrat', sans-serif;
+
+      font-size: 11px;
+
+      font-weight: 500;
+
+      letter-spacing: 3px;
+
+      color: #725538;
+
+      margin-bottom: 9px;
+    }
+
+    .address {
+      font-family: 'Montserrat', sans-serif;
+
+      font-size: 10px;
+
+      font-weight: 300;
+
+      line-height: 1.7;
+
+      color: #806b54;
+
+      margin-bottom: 16px;
+    }
+
+    .map-link {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      min-height: 42px;
+
+      padding: 10px 18px;
+
+      border: 1px solid rgba(146, 113, 65, 0.55);
+
+      text-decoration: none;
+
+      color: #80633e;
+
+      font-size: 9px;
+
+      letter-spacing: 2px;
+
+      font-weight: 500;
+
+      margin-bottom: 23px;
+
+      transition: transform 0.2s ease;
+    }
+
+    .map-link:active {
+      transform: scale(0.97);
+    }
+
+
+    /* =========================
+       FRASE
+    ========================= */
+
+    .message {
+      max-width: 310px;
+
+      font-family: 'Cormorant Garamond', serif;
+
+      font-size: 19px;
+
+      line-height: 1.35;
+
+      font-style: italic;
+
+      color: #765d45;
+
+      margin-bottom: 24px;
+    }
+
+
+    /* =========================
+       BOTÃO CONTINUAR
+    ========================= */
+
+    .continue-button {
+      min-width: 190px;
+
+      min-height: 48px;
+
+      border: 1px solid rgba(146, 113, 65, 0.7);
+
+      background: transparent;
+
+      color: #765a39;
+
+      font-family: 'Montserrat', sans-serif;
+
+      font-size: 9px;
+
+      letter-spacing: 3px;
+
+      font-weight: 500;
+
+      cursor: pointer;
+    }
+
+
+    /* =========================
+       BOTÃO VOLTAR
+    ========================= */
+
+    .back-button {
+      position: absolute;
+
+      top: max(25px, env(safe-area-inset-top));
+
+      left: 28px;
+
+      border: none;
+
+      background: transparent;
+
+      color: #9a7b4b;
+
+      font-family: 'Montserrat', sans-serif;
+
+      font-size: 8px;
+
+      letter-spacing: 2px;
+
+      cursor: pointer;
+
+      opacity: 0.8;
+    }
+
+
+    /* =========================
        ANIMAÇÕES
-    ============================== */
+    ========================= */
+
+    @keyframes fadeIn {
+
+      from {
+        opacity: 0;
+        transform: scale(0.94);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+    }
 
     @keyframes fadeUp {
 
       from {
-
         opacity: 0;
-
-        transform:
-          translateY(15px);
-
+        transform: translateY(18px);
       }
 
       to {
-
         opacity: 1;
+        transform: translateY(0);
+      }
 
-        transform:
-          translateY(0);
+    }
 
+    @keyframes screenIn {
+
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
 
     }
 
 
-    /* ==============================
-       CELULARES PEQUENOS
-    ============================== */
-
-    @media (max-height: 720px) {
-
-      .content {
-
-        transform: scale(.88);
-
-      }
-
-    }
-
-
-    @media (max-width: 380px) {
-
-      .monogram {
-
-        width: 180px;
-
-      }
-
-      .names {
-
-        font-size: 40px;
-
-      }
-
-      .intro {
-
-        font-size: 10px;
-
-        letter-spacing: 2.5px;
-
-      }
-
-      .date {
-
-        font-size: 15px;
-
-        letter-spacing: 4px;
-
-      }
-
-    }
-
-
-    /* ==============================
-       DESKTOP
-    ============================== */
+    /* =========================
+       TELAS MAIORES
+    ========================= */
 
     @media (min-width: 700px) {
 
-      .content {
+      .frame {
+        top: 25px;
+        bottom: 25px;
+        left: 35px;
+        right: 35px;
+      }
 
-        transform: scale(1.05);
-
+      #screen1,
+      #screen2 {
+        padding-left: 70px;
+        padding-right: 70px;
       }
 
       .monogram {
+        width: 210px;
+      }
 
-        width: 220px;
+      .name {
+        font-size: 70px;
+      }
 
+      .celebrate {
+        font-size: 58px;
       }
 
     }
@@ -618,87 +671,228 @@
 
 <body>
 
-  <main class="opening">
+
+  <!-- =====================================================
+       TELA 1
+  ====================================================== -->
+
+  <main id="screen1" class="screen">
 
     <div class="frame"></div>
 
     <div class="ornament top-left"></div>
-
+    <div class="ornament top-right"></div>
+    <div class="ornament bottom-left"></div>
     <div class="ornament bottom-right"></div>
 
 
-    <div class="content">
+    <div class="intro">
+      Uma nova história começa
+    </div>
 
 
-      <!-- TEXTO SUPERIOR -->
-
-      <div class="intro">
-        Uma nova história começa
-      </div>
-
-
-      <!-- SEU MONOGRAMA -->
-
-      <img
-        class="monogram"
-        src="monograma-NR-dourado.png"
-        alt="Monograma Nathalia e Raphael"
-      >
+    <!-- SEU MONOGRAMA -->
+    <img
+      class="monogram"
+      src="monograma-NR-dourado.png"
+      alt="Monograma Nathalia e Raphael"
+    >
 
 
-      <!-- NOMES -->
+    <div class="names">
 
-      <div class="names">
-
+      <div class="name">
         NATHALIA
+      </div>
 
-        <div class="and">
-          &amp;
-        </div>
+      <div class="ampersand">
+        &
+      </div>
 
+      <div class="name">
         RAPHAEL
-
       </div>
-
-
-      <!-- DATA -->
-
-      <div class="date">
-        14 · 11 · 2026
-      </div>
-
-
-      <!-- BOTÃO -->
-
-      <button
-        class="enter"
-        type="button"
-        id="enterButton"
-      >
-        ABRIR CONVITE
-      </button>
 
     </div>
+
+
+    <div class="date">
+      14 · 11 · 2026
+    </div>
+
+
+    <button
+      class="gold-button"
+      onclick="openInvitation()"
+    >
+      ABRIR CONVITE
+    </button>
 
   </main>
 
 
+
+  <!-- =====================================================
+       TELA 2
+  ====================================================== -->
+
+  <section id="screen2" class="screen">
+
+    <div class="frame"></div>
+
+    <div class="ornament top-left"></div>
+    <div class="ornament top-right"></div>
+    <div class="ornament bottom-left"></div>
+    <div class="ornament bottom-right"></div>
+
+
+    <button
+      class="back-button"
+      onclick="backToFirstScreen()"
+    >
+      ← VOLTAR
+    </button>
+
+
+    <div class="screen2-content">
+
+
+      <div class="small-title">
+        COM MUITA ALEGRIA
+      </div>
+
+
+      <div class="celebrate">
+        Vamos celebrar!
+      </div>
+
+
+      <!--
+        COLOQUE A FOTO DO CASAL NO GITHUB
+        COM O NOME:
+
+        foto-casal.png
+      -->
+
+      <img
+        class="couple-photo"
+        src="foto-casal.png"
+        alt="Nathalia e Raphael"
+      >
+
+
+      <div class="names-second">
+        Nathalia & Raphael
+      </div>
+
+
+      <div class="event-date">
+        14 · 11 · 2026
+      </div>
+
+
+      <div class="event-time">
+        16H30
+      </div>
+
+
+      <div class="venue">
+        ESPAÇO PARAÍSO
+      </div>
+
+
+      <div class="address">
+        R. Wilson Stefani, 510<br>
+        Jardim Vitória · Várzea Paulista – SP<br>
+        13236-115
+      </div>
+
+
+      <a
+        class="map-link"
+        href="https://www.google.com/maps/search/?api=1&query=Espa%C3%A7o%20Para%C3%ADso%2C%20R.%20Wilson%20Stefani%2C%20510%2C%20Jardim%20Vit%C3%B3ria%2C%20V%C3%A1rzea%20Paulista%20-%20SP%2C%2013236-115"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        VER LOCAL NO MAPA
+      </a>
+
+
+      <div class="message">
+        Um dia especial merece ser celebrado
+        ao lado de quem amamos.
+      </div>
+
+
+      <button
+        class="continue-button"
+        onclick="continueInvitation()"
+      >
+        CONTINUAR ✦
+      </button>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
   <script>
 
-    document
-      .getElementById("enterButton")
-      .addEventListener(
-        "click",
-        function () {
+    function openInvitation() {
 
-          alert(
-            "Em breve, o convite será aberto. ❤️"
-          );
+      const screen1 = document.getElementById("screen1");
+      const screen2 = document.getElementById("screen2");
 
-        }
-      );
+      screen1.style.display = "none";
+
+      screen2.classList.add("active");
+
+      window.scrollTo({
+        top: 0,
+        behavior: "instant"
+      });
+
+    }
+
+
+    function backToFirstScreen() {
+
+      const screen1 = document.getElementById("screen1");
+      const screen2 = document.getElementById("screen2");
+
+      screen2.classList.remove("active");
+
+      screen2.style.display = "none";
+
+      screen1.style.display = "flex";
+
+      window.scrollTo({
+        top: 0,
+        behavior: "instant"
+      });
+
+    }
+
+
+    function continueInvitation() {
+
+      /*
+        AQUI VAMOS COLOCAR A TELA 3
+        QUANDO ELA ESTIVER PRONTA.
+      */
+
+      alert("A próxima parte do convite vem agora. ❤️");
+
+    }
 
   </script>
+
 
 </body>
 </html>
