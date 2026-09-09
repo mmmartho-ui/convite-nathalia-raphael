@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 
 <head>
+
   <meta charset="UTF-8">
 
   <meta
@@ -20,10 +21,6 @@
   >
 
   <style>
-
-    /* =====================================================
-       GERAL
-    ===================================================== */
 
     * {
       box-sizing: border-box;
@@ -80,7 +77,6 @@
 
     /* =====================================================
        MOLDURA
-       DELICADA + BOTÂNICA
     ===================================================== */
 
     .frame {
@@ -113,7 +109,7 @@
 
 
     /* =====================================================
-       CANTOS FLORAIS
+       FLORAIS
     ===================================================== */
 
     .floral {
@@ -165,9 +161,6 @@
       transform-origin: bottom;
     }
 
-
-    /* folhas */
-
     .leaf {
       position: absolute;
 
@@ -217,11 +210,6 @@
       transform: rotate(38deg);
     }
 
-
-    /* =====================================================
-       POSIÇÃO DOS CANTOS
-    ===================================================== */
-
     .floral.top-left {
       top: 17px;
       left: 17px;
@@ -230,21 +218,18 @@
     .floral.top-right {
       top: 17px;
       right: 17px;
-
       transform: scaleX(-1);
     }
 
     .floral.bottom-left {
       bottom: 17px;
       left: 17px;
-
       transform: scaleY(-1);
     }
 
     .floral.bottom-right {
       bottom: 17px;
       right: 17px;
-
       transform: scale(-1);
     }
 
@@ -267,8 +252,6 @@
 
     .intro {
       margin-bottom: 22px;
-
-      font-family: 'Montserrat', sans-serif;
 
       font-size: 11px;
       font-weight: 400;
@@ -302,9 +285,7 @@
 
     .names {
       display: flex;
-
       flex-direction: column;
-
       align-items: center;
 
       line-height: 0.88;
@@ -348,14 +329,7 @@
       color: #9a7b4b;
 
       margin-bottom: 28px;
-
-      animation: fadeUp 1.7s ease both;
     }
-
-
-    /* =====================================================
-       BOTÃO
-    ===================================================== */
 
     .gold-button {
       appearance: none;
@@ -379,18 +353,6 @@
       letter-spacing: 3px;
 
       cursor: pointer;
-
-      transition:
-        background 0.3s ease,
-        transform 0.3s ease;
-
-      animation: fadeUp 1.9s ease both;
-    }
-
-    .gold-button:active {
-      transform: scale(0.97);
-
-      background: rgba(151, 120, 73, 0.12);
     }
 
 
@@ -434,14 +396,7 @@
       align-items: center;
     }
 
-
-    /* =====================================================
-       TÍTULO
-    ===================================================== */
-
     .small-title {
-      font-family: 'Montserrat', sans-serif;
-
       font-size: 11px;
       font-weight: 500;
 
@@ -459,17 +414,10 @@
 
       font-weight: 400;
 
-      letter-spacing: 1px;
-
       color: #674a34;
 
       margin-bottom: 18px;
     }
-
-
-    /* =====================================================
-       FOTO
-    ===================================================== */
 
     .couple-photo {
       display: block;
@@ -496,11 +444,6 @@
       margin-bottom: 20px;
     }
 
-
-    /* =====================================================
-       NOMES
-    ===================================================== */
-
     .names-second {
       font-family: 'Cormorant Garamond', serif;
 
@@ -515,11 +458,6 @@
       margin-bottom: 12px;
     }
 
-
-    /* =====================================================
-       DATA
-    ===================================================== */
-
     .event-date {
       font-family: 'Cormorant Garamond', serif;
 
@@ -529,21 +467,12 @@
 
       letter-spacing: 5px;
 
-      line-height: 1;
-
       color: #9a7b4b;
 
       margin-bottom: 7px;
     }
 
-
-    /* =====================================================
-       DIA
-    ===================================================== */
-
     .event-day {
-      font-family: 'Montserrat', sans-serif;
-
       font-size: 10px;
 
       font-weight: 500;
@@ -554,11 +483,6 @@
 
       margin-bottom: 5px;
     }
-
-
-    /* =====================================================
-       HORÁRIO
-    ===================================================== */
 
     .event-time {
       font-family: 'Cormorant Garamond', serif;
@@ -573,11 +497,6 @@
 
       margin-bottom: 20px;
     }
-
-
-    /* =====================================================
-       SEPARADOR
-    ===================================================== */
 
     .separator {
       display: flex;
@@ -607,14 +526,7 @@
       color: #a48757;
     }
 
-
-    /* =====================================================
-       LOCAL
-    ===================================================== */
-
     .venue {
-      font-family: 'Montserrat', sans-serif;
-
       font-size: clamp(14px, 4vw, 18px);
 
       font-weight: 500;
@@ -626,14 +538,7 @@
       margin-bottom: 10px;
     }
 
-
-    /* =====================================================
-       ENDEREÇO
-    ===================================================== */
-
     .address {
-      font-family: 'Montserrat', sans-serif;
-
       font-size: clamp(12px, 3.5vw, 15px);
 
       font-weight: 300;
@@ -644,11 +549,6 @@
 
       margin-bottom: 17px;
     }
-
-
-    /* =====================================================
-       MAPA
-    ===================================================== */
 
     .map-link {
       display: inline-flex;
@@ -666,8 +566,6 @@
 
       color: #80633e;
 
-      font-family: 'Montserrat', sans-serif;
-
       font-size: 9px;
 
       letter-spacing: 2.5px;
@@ -676,17 +574,6 @@
 
       margin-bottom: 20px;
     }
-
-    .map-link:active {
-      transform: scale(0.97);
-
-      background: rgba(151, 120, 73, 0.10);
-    }
-
-
-    /* =====================================================
-       FRASE
-    ===================================================== */
 
     .message {
       max-width: 330px;
@@ -703,11 +590,6 @@
 
       margin-bottom: 20px;
     }
-
-
-    /* =====================================================
-       CONTINUAR
-    ===================================================== */
 
     .continue-button {
       min-width: 190px;
@@ -733,11 +615,6 @@
       cursor: pointer;
     }
 
-
-    /* =====================================================
-       VOLTAR
-    ===================================================== */
-
     .back-button {
       position: absolute;
 
@@ -753,11 +630,233 @@
 
       color: #9a7b4b;
 
-      font-family: 'Montserrat', sans-serif;
-
       font-size: 8px;
 
       letter-spacing: 2px;
+
+      cursor: pointer;
+    }
+
+
+    /* =====================================================
+       TELA 3
+       NOSSA HISTÓRIA
+    ===================================================== */
+
+    #screen3 {
+      display: none;
+
+      flex-direction: column;
+
+      min-height: 100svh;
+
+      padding:
+        75px
+        28px
+        55px;
+
+      text-align: center;
+    }
+
+    #screen3.active {
+      display: flex;
+
+      animation: screenIn 0.8s ease both;
+    }
+
+    .screen3-content {
+      position: relative;
+
+      z-index: 4;
+
+      width: 100%;
+      max-width: 520px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+    }
+
+
+    /* =====================================================
+       CABEÇALHO
+    ===================================================== */
+
+    .history-label {
+      font-size: 10px;
+
+      font-weight: 500;
+
+      letter-spacing: 4px;
+
+      color: #9a7b4b;
+
+      margin-bottom: 8px;
+    }
+
+    .history-title {
+      font-family: 'Cormorant Garamond', serif;
+
+      font-size: clamp(42px, 11vw, 58px);
+
+      font-weight: 400;
+
+      color: #674a34;
+
+      margin-bottom: 20px;
+    }
+
+
+    /* =====================================================
+       GALERIA
+    ===================================================== */
+
+    .history-gallery {
+      width: 100%;
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      gap: 13px;
+
+      margin-bottom: 24px;
+    }
+
+    .history-photo {
+      display: block;
+
+      width: 100%;
+
+      max-width: 330px;
+
+      object-fit: cover;
+
+      border: 1px solid rgba(157, 126, 78, 0.55);
+
+      padding: 4px;
+
+      background: rgba(255,255,255,0.55);
+
+      box-shadow:
+        0 10px 25px rgba(69, 48, 28, 0.10);
+    }
+
+    .history-photo.photo1 {
+      height: 215px;
+
+      border-radius: 110px 110px 18px 18px;
+    }
+
+    .history-photo.photo2 {
+      height: 300px;
+
+      border-radius: 18px;
+    }
+
+    .history-photo.photo3 {
+      height: 300px;
+
+      border-radius: 18px 18px 110px 110px;
+    }
+
+
+    /* =====================================================
+       TEXTO DA HISTÓRIA
+    ===================================================== */
+
+    .history-text {
+      max-width: 355px;
+
+      font-family: 'Cormorant Garamond', serif;
+
+      font-size: 20px;
+
+      line-height: 1.42;
+
+      color: #72563e;
+
+      margin-bottom: 22px;
+    }
+
+    .history-text strong {
+      font-weight: 600;
+
+      color: #60442f;
+    }
+
+
+    /* =====================================================
+       VERSÍCULO
+    ===================================================== */
+
+    .verse-line {
+      width: 90px;
+
+      height: 1px;
+
+      background: rgba(151, 121, 77, 0.50);
+
+      margin-bottom: 15px;
+    }
+
+    .verse {
+      max-width: 330px;
+
+      font-family: 'Cormorant Garamond', serif;
+
+      font-size: 20px;
+
+      line-height: 1.35;
+
+      font-style: italic;
+
+      color: #765d45;
+
+      margin-bottom: 7px;
+    }
+
+    .verse-reference {
+      font-family: 'Montserrat', sans-serif;
+
+      font-size: 9px;
+
+      letter-spacing: 3px;
+
+      color: #9a7b4b;
+
+      margin-bottom: 25px;
+    }
+
+
+    /* =====================================================
+       BOTÃO TELA 3
+    ===================================================== */
+
+    .history-button {
+      min-width: 190px;
+
+      min-height: 48px;
+
+      padding: 12px 25px;
+
+      border: 1px solid rgba(146, 113, 65, 0.7);
+
+      background: transparent;
+
+      color: #765a39;
+
+      font-family: 'Montserrat', sans-serif;
+
+      font-size: 9px;
+
+      letter-spacing: 3px;
+
+      font-weight: 500;
 
       cursor: pointer;
     }
@@ -811,23 +910,10 @@
 
 
     /* =====================================================
-       TELAS MAIORES
+       DESKTOP
     ===================================================== */
 
     @media (min-width: 700px) {
-
-      .frame {
-        top: 14px;
-        right: 14px;
-        bottom: 14px;
-        left: 14px;
-      }
-
-      #screen1,
-      #screen2 {
-        padding-left: 70px;
-        padding-right: 70px;
-      }
 
       .monogram {
         width: 210px;
@@ -845,6 +931,10 @@
         width: 285px;
       }
 
+      .history-photo {
+        max-width: 360px;
+      }
+
     }
 
   </style>
@@ -859,15 +949,9 @@
        TELA 1
   ===================================================== -->
 
-  <main
-    id="screen1"
-    class="screen"
-  >
+  <main id="screen1" class="screen">
 
     <div class="frame"></div>
-
-
-    <!-- CANTOS FLORAIS -->
 
     <div class="floral top-left">
       <span class="leaf leaf1"></span>
@@ -910,13 +994,11 @@
       Uma nova história começa
     </div>
 
-
     <img
       class="monogram"
       src="monograma-NR-dourado.png"
       alt="Monograma Nathalia e Raphael"
     >
-
 
     <div class="names">
 
@@ -934,11 +1016,9 @@
 
     </div>
 
-
     <div class="date">
       14 · 11 · 2026
     </div>
-
 
     <button
       class="gold-button"
@@ -956,15 +1036,9 @@
        TELA 2
   ===================================================== -->
 
-  <section
-    id="screen2"
-    class="screen"
-  >
+  <section id="screen2" class="screen">
 
     <div class="frame"></div>
-
-
-    <!-- CANTOS FLORAIS -->
 
     <div class="floral top-left">
       <span class="leaf leaf1"></span>
@@ -1014,18 +1088,13 @@
 
     <div class="screen2-content">
 
-
       <div class="small-title">
         COM MUITA ALEGRIA
       </div>
 
-
       <div class="celebrate">
         Vamos celebrar!
       </div>
-
-
-      <!-- FOTO REAL DO GITHUB -->
 
       <img
         class="couple-photo"
@@ -1033,26 +1102,21 @@
         alt="Nathalia e Raphael"
       >
 
-
       <div class="names-second">
         Nathalia & Raphael
       </div>
-
 
       <div class="event-date">
         14 · 11 · 2026
       </div>
 
-
       <div class="event-day">
         SÁBADO
       </div>
 
-
       <div class="event-time">
         16H30
       </div>
-
 
       <div class="separator">
 
@@ -1066,22 +1130,15 @@
 
       </div>
 
-
       <div class="venue">
         ESPAÇO PARAÍSO
       </div>
 
-
       <div class="address">
-
         R. Wilson Stefani, 510<br>
-
         Jardim Vitória · Várzea Paulista – SP<br>
-
         13236-115
-
       </div>
-
 
       <a
         class="map-link"
@@ -1092,19 +1149,176 @@
         VER LOCAL NO MAPA
       </a>
 
-
       <div class="message">
-
         Um dia especial merece ser celebrado
         ao lado de quem amamos.
-
       </div>
-
 
       <button
         class="continue-button"
         type="button"
-        onclick="continueInvitation()"
+        onclick="openScreen3()"
+      >
+        CONTINUAR ✦
+      </button>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       TELA 3
+  ===================================================== -->
+
+  <section id="screen3" class="screen">
+
+    <div class="frame"></div>
+
+    <div class="floral top-left">
+      <span class="leaf leaf1"></span>
+      <span class="leaf leaf2"></span>
+      <span class="leaf leaf3"></span>
+      <span class="leaf leaf4"></span>
+      <span class="leaf leaf5"></span>
+      <span class="leaf leaf6"></span>
+    </div>
+
+    <div class="floral top-right">
+      <span class="leaf leaf1"></span>
+      <span class="leaf leaf2"></span>
+      <span class="leaf leaf3"></span>
+      <span class="leaf leaf4"></span>
+      <span class="leaf leaf5"></span>
+      <span class="leaf leaf6"></span>
+    </div>
+
+    <div class="floral bottom-left">
+      <span class="leaf leaf1"></span>
+      <span class="leaf leaf2"></span>
+      <span class="leaf leaf3"></span>
+      <span class="leaf leaf4"></span>
+      <span class="leaf leaf5"></span>
+      <span class="leaf leaf6"></span>
+    </div>
+
+    <div class="floral bottom-right">
+      <span class="leaf leaf1"></span>
+      <span class="leaf leaf2"></span>
+      <span class="leaf leaf3"></span>
+      <span class="leaf leaf4"></span>
+      <span class="leaf leaf5"></span>
+      <span class="leaf leaf6"></span>
+    </div>
+
+
+    <button
+      class="back-button"
+      type="button"
+      onclick="backToScreen2()"
+    >
+      ← VOLTAR
+    </button>
+
+
+    <div class="screen3-content">
+
+
+      <div class="history-label">
+        A NOSSA HISTÓRIA
+      </div>
+
+
+      <div class="history-title">
+        Nathalia & Raphael
+      </div>
+
+
+      <!-- =================================================
+           GALERIA
+      ================================================== -->
+
+      <div class="history-gallery">
+
+
+        <img
+          class="history-photo photo1"
+          src="foto-tela3-1.JPEG"
+          alt="Nathalia e Raphael"
+        >
+
+
+        <img
+          class="history-photo photo2"
+          src="foto-tela3-2.JPEG"
+          alt="Nathalia e Raphael"
+        >
+
+
+        <img
+          class="history-photo photo3"
+          src="foto-tela3-3.JPEG"
+          alt="Nathalia e Raphael"
+        >
+
+      </div>
+
+
+      <!-- =================================================
+           TEXTO
+      ================================================== -->
+
+      <div class="history-text">
+
+        <strong>Tudo começou de um jeito inesperado.</strong>
+        Em meio a tantos caminhos e encontros,
+        a vida fez nossos caminhos se cruzarem.
+
+        <br><br>
+
+        O que começou com um encontro se transformou
+        em companheirismo, amor, sonhos compartilhados
+        e a certeza de que queríamos construir uma vida juntos.
+
+        <br><br>
+
+        Agora, chegou o momento de transformar
+        esse amor em uma nova etapa da nossa história.
+
+        <br><br>
+
+        E queremos viver esse dia ao lado de
+        quem faz parte da nossa caminhada.
+
+      </div>
+
+
+      <!-- =================================================
+           VERSÍCULO
+      ================================================== -->
+
+      <div class="verse-line"></div>
+
+
+      <div class="verse">
+
+        “Aonde quer que fores, irei eu;
+        e onde quer que pousares,
+        ali pousarei eu.”
+
+      </div>
+
+
+      <div class="verse-reference">
+        RUTE 1:16
+      </div>
+
+
+      <button
+        class="history-button"
+        type="button"
+        onclick="continueFromScreen3()"
       >
         CONTINUAR ✦
       </button>
@@ -1124,14 +1338,10 @@
 
     function openInvitation() {
 
-      const screen1 =
-        document.getElementById("screen1");
+      document.getElementById("screen1").style.display = "none";
 
       const screen2 =
         document.getElementById("screen2");
-
-
-      screen1.style.display = "none";
 
       screen2.classList.add("active");
 
@@ -1145,18 +1355,14 @@
 
     function backToFirstScreen() {
 
-      const screen1 =
-        document.getElementById("screen1");
+      document.getElementById("screen2")
+        .classList.remove("active");
 
-      const screen2 =
-        document.getElementById("screen2");
+      document.getElementById("screen2")
+        .style.display = "none";
 
-
-      screen2.classList.remove("active");
-
-      screen2.style.display = "none";
-
-      screen1.style.display = "flex";
+      document.getElementById("screen1")
+        .style.display = "flex";
 
       window.scrollTo({
         top: 0,
@@ -1166,7 +1372,45 @@
     }
 
 
-    function continueInvitation() {
+    function openScreen3() {
+
+      document.getElementById("screen2")
+        .classList.remove("active");
+
+      document.getElementById("screen2")
+        .style.display = "none";
+
+      document.getElementById("screen3")
+        .classList.add("active");
+
+      window.scrollTo({
+        top: 0,
+        behavior: "instant"
+      });
+
+    }
+
+
+    function backToScreen2() {
+
+      document.getElementById("screen3")
+        .classList.remove("active");
+
+      document.getElementById("screen3")
+        .style.display = "none";
+
+      document.getElementById("screen2")
+        .classList.add("active");
+
+      window.scrollTo({
+        top: 0,
+        behavior: "instant"
+      });
+
+    }
+
+
+    function continueFromScreen3() {
 
       alert(
         "A próxima parte do convite será aberta aqui. ❤️"
