@@ -1,2202 +1,1263 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-
-<meta charset="UTF-8">
-
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
-
-<title>Nathalia & Raphael</title>
-
-
-<!-- =====================================================
-     PRÉVIA DO LINK NO WHATSAPP
-===================================================== -->
-
-<meta
-    property="og:type"
-    content="website"
->
-
-<meta
-    property="og:title"
-    content="Nathalia & Raphael"
->
-
-<meta
-    property="og:description"
-    content="14 · 11 · 2026 · Uma nova história começa"
->
-
-<meta
-    property="og:image"
-    content="https://mmmartho-ui.github.io/convite-nathalia-raphael/miniatura-whatsapp.png"
->
-
-<meta
-    property="og:url"
-    content="https://mmmartho-ui.github.io/convite-nathalia-raphael/"
->
-
-<meta
-    name="twitter:card"
-    content="summary_large_image"
->
-
-<meta
-    name="twitter:title"
-    content="Nathalia & Raphael"
->
-
-<meta
-    name="twitter:description"
-    content="14 · 11 · 2026 · Uma nova história começa"
->
-
-<meta
-    name="twitter:image"
-    content="https://mmmartho-ui.github.io/convite-nathalia-raphael/miniatura-whatsapp.png"
->
-
-
-<style>
-
-/* =====================================================
-   FONTES E CORES
-===================================================== */
-
-@import url(
-'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap'
-);
-
-
-:root {
-
-    --marsala: #7A2638;
-
-    --marsala-dark: #64202F;
-
-    --gold: #987A4D;
-
-    --brown: #563D28;
-
-    --text: #675847;
-
-    --soft: #F8F4ED;
-
-}
-
-
-/* =====================================================
-   RESET
-===================================================== */
-
-* {
-
-    box-sizing: border-box;
-
-    margin: 0;
-
-    padding: 0;
-
-}
-
-
-html,
-body {
-
-    width: 100%;
-
-    min-height: 100%;
-
-}
-
-
-body {
-
-    background:
-        radial-gradient(
-            circle at top,
-            #fffdf9 0%,
-            #f8f4ed 48%,
-            #f3eee5 100%
-        );
-
-    color: var(--brown);
-
-    font-family:
-        'Montserrat',
-        sans-serif;
-
-}
-
-
-/* =====================================================
-   TELAS
-===================================================== */
-
-.screen {
-
-    display: none;
-
-    width: 100%;
-
-    min-height: 100vh;
-
-    position: relative;
-
-    overflow-x: hidden;
-
-}
-
-
-.screen.active {
-
-    display: flex;
-
-}
-
-
-/* =====================================================
-   MOLDURA
-===================================================== */
-
-.frame {
-
-    position: absolute;
-
-    top: 14px;
-
-    right: 14px;
-
-    bottom: 14px;
-
-    left: 14px;
-
-    border:
-        1px solid
-        rgba(122,38,56,.30);
-
-    pointer-events: none;
-
-    z-index: 10;
-
-}
-
-
-.frame::before {
-
-    content: "";
-
-    position: absolute;
-
-    top: 7px;
-
-    right: 7px;
-
-    bottom: 7px;
-
-    left: 7px;
-
-    border:
-        1px solid
-        rgba(151,121,77,.25);
-
-}
-
-
-/* =====================================================
-   FOLHAGENS
-===================================================== */
-
-.floral {
-
-    position: absolute;
-
-    width: 90px;
-
-    height: 90px;
-
-    z-index: 11;
-
-    pointer-events: none;
-
-    opacity: .72;
-
-}
-
-
-.floral::before,
-.floral::after {
-
-    content: "";
-
-    position: absolute;
-
-    border:
-        1px solid
-        rgba(122,38,56,.45);
-
-    border-radius:
-        100% 0 100% 0;
-
-}
-
-
-.floral::before {
-
-    width: 30px;
-
-    height: 14px;
-
-    top: 12px;
-
-    left: 12px;
-
-    transform: rotate(35deg);
-
-}
-
-
-.floral::after {
-
-    width: 24px;
-
-    height: 12px;
-
-    top: 29px;
-
-    left: 31px;
-
-    transform: rotate(-25deg);
-
-}
-
-
-.floral span {
-
-    position: absolute;
-
-    width: 1px;
-
-    height: 65px;
-
-    background:
-        rgba(151,121,77,.55);
-
-    transform:
-        rotate(-42deg);
-
-    top: 5px;
-
-    left: 38px;
-
-}
-
-
-.floral span::before,
-.floral span::after {
-
-    content: "";
-
-    position: absolute;
-
-    width: 23px;
-
-    height: 11px;
-
-    border:
-        1px solid
-        rgba(151,121,77,.45);
-
-    border-radius:
-        100% 0 100% 0;
-
-}
-
-
-.floral span::before {
-
-    top: 18px;
-
-    left: -18px;
-
-    transform: rotate(-25deg);
-
-}
-
-
-.floral span::after {
-
-    top: 37px;
-
-    left: 0;
-
-    transform: rotate(25deg);
-
-}
-
-
-.floral.top-left {
-
-    top: 13px;
-
-    left: 12px;
-
-}
-
-
-.floral.top-right {
-
-    top: 13px;
-
-    right: 12px;
-
-    transform:
-        scaleX(-1);
-
-}
-
-
-.floral.bottom-left {
-
-    bottom: 13px;
-
-    left: 12px;
-
-    transform:
-        scaleY(-1);
-
-}
-
-
-.floral.bottom-right {
-
-    bottom: 13px;
-
-    right: 12px;
-
-    transform:
-        scale(-1,-1);
-
-}
-
-
-/* =====================================================
-   NAVEGAÇÃO
-===================================================== */
-
-.navigation {
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    gap: 13px;
-
-    margin-top: 25px;
-
-}
-
-
-.navigation-button {
-
-    border: none;
-
-    background: transparent;
-
-    color: var(--marsala);
-
-    font-family:
-        'Montserrat',
-        sans-serif;
-
-    font-size: 9px;
-
-    letter-spacing: 3px;
-
-    cursor: pointer;
-
-    padding: 7px 12px;
-
-}
-
-
-.navigation-button.primary {
-
-    border:
-        1px solid
-        rgba(122,38,56,.65);
-
-    padding:
-        12px 28px;
-
-}
-
-
-.navigation-button:hover {
-
-    color: var(--marsala-dark);
-
-}
-
-
-.navigation-button.primary:hover {
-
-    background: var(--marsala);
-
-    color: white;
-
-}
-
-
-/* =====================================================
-   TELA 1
-===================================================== */
-
-#screen1 {
-
-    align-items: center;
-
-    justify-content: center;
-
-    text-align: center;
-
-}
-
-
-.intro-content {
-
-    position: relative;
-
-    z-index: 5;
-
-    width: 90%;
-
-    max-width: 430px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-}
-
-
-.intro {
-
-    font-size: 11px;
-
-    letter-spacing: 4px;
-
-    color: var(--marsala);
-
-    margin-bottom: 22px;
-
-    text-transform: uppercase;
-
-}
-
-
-.monogram {
-
-    width:
-        min(55vw,220px);
-
-    max-width: 220px;
-
-    margin-bottom: 22px;
-
-}
-
-
-.names {
-
-    font-family:
-        'Cormorant Garamond',
-        serif;
-
-    font-size:
-        clamp(35px,10vw,58px);
-
-    line-height: .9;
-
-    letter-spacing: 5px;
-
-    color: var(--brown);
-
-}
-
-
-.names .amp {
-
-    display: block;
-
-    margin: 7px 0;
-
-    font-size: .55em;
-
-    letter-spacing: 0;
-
-    color: var(--marsala);
-
-}
-
-
-.date {
-
-    margin-top: 25px;
-
-    font-size: 18px;
-
-    font-weight: 500;
-
-    letter-spacing: 6px;
-
-    color: var(--gold);
-
-}
-
-
-.main-button {
-
-    margin-top: 35px;
-
-    padding:
-        14px 30px;
-
-    border:
-        1px solid
-        var(--marsala);
-
-    background: transparent;
-
-    color: var(--marsala);
-
-    font-size: 11px;
-
-    letter-spacing: 3px;
-
-    cursor: pointer;
-
-}
-
-
-.main-button:hover {
-
-    background: var(--marsala);
-
-    color: white;
-
-}
-
-
-/* =====================================================
-   TELA 2
-===================================================== */
-
-#screen2 {
-
-    align-items: center;
-
-    justify-content: center;
-
-    padding:
-        50px 30px 45px;
-
-}
-
-
-.event-content {
-
-    position: relative;
-
-    z-index: 5;
-
-    width: 100%;
-
-    max-width: 470px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    text-align: center;
-
-}
-
-
-.event-intro {
-
-    font-size: 10px;
-
-    letter-spacing: 4px;
-
-    color: var(--marsala);
-
-    margin-bottom: 7px;
-
-}
-
-
-.event-title {
-
-    font-family:
-        'Cormorant Garamond',
-        serif;
-
-    font-size:
-        clamp(31px,8vw,48px);
-
-    font-weight: 500;
-
-    color: var(--brown);
-
-    margin-bottom: 20px;
-
-}
-
-
-.couple-photo {
-
-    width:
-        min(64vw,285px);
-
-    border-radius:
-        150px 150px 20px 20px;
-
-    border:
-        1px solid
-        var(--gold);
-
-    padding: 5px;
-
-    background:
-        rgba(255,255,255,.7);
-
-    box-shadow:
-        0 15px 35px
-        rgba(70,45,25,.12);
-
-    margin-bottom: 19px;
-
-}
-
-
-.event-names {
-
-    font-family:
-        'Cormorant Garamond',
-        serif;
-
-    font-size: 25px;
-
-    color: var(--brown);
-
-    margin-bottom: 8px;
-
-}
-
-
-/* DATA */
-
-.event-date {
-
-    font-family:
-        'Cormorant Garamond',
-        serif;
-
-    font-size:
-        clamp(30px,8vw,38px);
-
-    font-weight: 600;
-
-    letter-spacing: 4px;
-
-    color: var(--marsala);
-
-    line-height: 1;
-
-}
-
-
-/* HORÁRIO */
-
-.event-time {
-
-    font-family:
-        'Cormorant Garamond',
-        serif;
-
-    font-size:
-        clamp(25px,7vw,34px);
-
-    font-weight: 500;
-
-    color: var(--brown);
-
-    margin-top: 4px;
-
-}
-
-
-/* DIVISÓRIA */
-
-.event-divider {
-
-    width: 48px;
-
-    height: 1px;
-
-    background:
-        var(--gold);
-
-    opacity: .55;
-
-    margin:
-        16px 0 15px;
-
-}
-
-
-/* LOCAL */
-
-.location-label {
-
-    font-size: 9px;
-
-    letter-spacing: 3px;
-
-    color: var(--gold);
-
-    margin-bottom: 5px;
-
-}
-
-
-.venue {
-
-    font-family:
-        'Cormorant Garamond',
-        serif;
-
-    font-size:
-        clamp(22px,6vw,29px);
-
-    font-weight: 600;
-
-    letter-spacing: 1px;
-
-    color: var(--marsala);
-
-    line-height: 1;
-
-}
-
-
-.address {
-
-    margin-top: 7px;
-
-    font-size:
-        clamp(12px,3.4vw,14px);
-
-    line-height: 1.55;
-
-    color: #776A5B;
-
-}
-
-
-/* MAPA */
-
-.map-button {
-
-    display: inline-block;
-
-    margin-top: 13px;
-
-    padding-bottom: 3px;
-
-    border-bottom:
-        1px solid
-        rgba(122,38,56,.45);
-
-    text-decoration: none;
-
-    color: var(--marsala);
-
-    font-size: 9px;
-
-    letter-spacing: 2.5px;
-
-}
-
-
-/* TEXTO */
-
-.event-message {
-
-    max-width: 350px;
-
-    margin-top: 21px;
-
-    padding-top: 17px;
-
-    border-top:
-        1px solid
-        rgba(151,121,77,.22);
-
-    font-family:
-        'Cormorant Garamond',
-        serif;
-
-    font-size: 17px;
-
-    line-height: 1.4;
-
-    color: var(--text);
-
-}
-
-
-/* =====================================================
-   TELA 3
-===================================================== */
-
-#screen3 {
-
-    align-items: center;
-
-    justify-content: center;
-
-    padding:
-        55px 28px;
-
-    text-align: center;
-
-}
-
-
-.history-content {
-
-    width: 100%;
-
-    max-width: 430px;
-
-    position: relative;
-
-    z-index: 5;
-
-}
-
-
-.history-small {
-
-    font-size: 10px;
-
-    letter-spacing: 4px;
-
-    color: var(--marsala);
-
-    margin-bottom: 8px;
-
-}
-
-
-.history-title {
-
-    font-family:
-        'Cormorant Garamond',
-        serif;
-
-    font-size:
-        clamp(34px,9vw,50px);
-
-    font-weight: 500;
-
-    color: var(--brown);
-
-    line-height: 1;
-
-}
-
-
-.history-names {
-
-    font-family:
-        'Cormorant Garamond',
-        serif;
-
-    font-size: 21px;
-
-    color: var(--gold);
-
-    margin:
-        5px 0 24px;
-
-}
-
-
-.history-gallery {
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    gap: 16px;
-
-}
-
-
-.history-photo {
-
-    display: block;
-
-    width: 100%;
-
-    max-width: 350px;
-
-    height: auto;
-
-    object-fit: contain;
-
-    border:
-        1px solid
-        var(--gold);
-
-    padding: 4px;
-
-    background:
-        rgba(255,255,255,.55);
-
-    box-shadow:
-        0 10px 25px
-        rgba(69,48,28,.10);
-
-}
-
-
-.history-photo.photo1 {
-
-    border-radius:
-        110px 110px 18px 18px;
-
-}
-
-
-.history-photo.photo2 {
-
-    border-radius: 18px;
-
-}
-
-
-.history-photo.photo3 {
-
-    border-radius:
-        18px 18px 110px 110px;
-
-}
-
-
-.history-text {
-
-    margin-top: 25px;
-
-    font-family:
-        'Cormorant Garamond',
-        serif;
-
-    font-size: 18px;
-
-    line-height: 1.45;
-
-    color: var(--text);
-
-}
-
-
-.history-text p {
-
-    margin-bottom: 13px;
-
-}
-
-
-.quote {
-
-    margin-top: 22px;
-
-    padding: 0 12px;
-
-    font-family:
-        'Cormorant Garamond',
-        serif;
-
-    font-size: 20px;
-
-    line-height: 1.4;
-
-    font-style: italic;
-
-    color: var(--marsala);
-
-}
-
-
-/* =====================================================
-   TELA 4
-===================================================== */
-
-#screen4 {
-
-    align-items: center;
-
-    justify-content: center;
-
-    text-align: center;
-
-    padding:
-        55px 25px;
-
-}
-
-
-.countdown-content {
-
-    width: 100%;
-
-    max-width: 480px;
-
-    position: relative;
-
-    z-index: 5;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-}
-
-
-.countdown-small {
-
-    font-size: 10px;
-
-    letter-spacing: 4px;
-
-    color: var(--marsala);
-
-    margin-bottom: 9px;
-
-}
-
-
-.countdown-title {
-
-    font-family:
-        'Cormorant Garamond',
-        serif;
-
-    font-size:
-        clamp(36px,10vw,58px);
-
-    line-height: .9;
-
-    font-weight: 500;
-
-    color: var(--brown);
-
-}
-
-
-.countdown-date {
-
-    margin-top: 17px;
-
-    font-family:
-        'Cormorant Garamond',
-        serif;
-
-    font-size: 23px;
-
-    letter-spacing: 4px;
-
-    color: var(--marsala);
-
-}
-
-
-.countdown-subtitle {
-
-    margin-top: 7px;
-
-    font-size: 10px;
-
-    letter-spacing: 3px;
-
-    color: #89745B;
-
-}
-
-
-/* =====================================================
-   CONTADOR — SOMENTE DIAS
-===================================================== */
-
-.countdown {
-
-    width: 100%;
-
-    display: flex;
-
-    justify-content: center;
-
-    margin-top: 28px;
-
-}
-
-
-.count-box {
-
-    width: 170px;
-
-    padding:
-        16px 20px 13px;
-
-    border-top:
-        1px solid
-        rgba(122,38,56,.35);
-
-    border-bottom:
-        1px solid
-        rgba(151,121,77,.30);
-
-    background:
-        rgba(255,255,255,.28);
-
-}
-
-
-.count-number {
-
-    font-family:
-        'Cormorant Garamond',
-        serif;
-
-    font-size:
-        clamp(48px,13vw,68px);
-
-    font-weight: 600;
-
-    line-height: 1;
-
-    color: var(--marsala);
-
-}
-
-
-.count-label {
-
-    margin-top: 7px;
-
-    font-size: 9px;
-
-    letter-spacing: 3px;
-
-    color: #8B765C;
-
-}
-
-
-/* =====================================================
-   TEXTO TELA 4
-===================================================== */
-
-.countdown-divider {
-
-    width: 45px;
-
-    height: 1px;
-
-    background:
-        var(--gold);
-
-    opacity: .55;
-
-    margin:
-        28px 0 20px;
-
-}
-
-
-.countdown-message {
-
-    max-width: 390px;
-
-    font-family:
-        'Cormorant Garamond',
-        serif;
-
-    font-size: 19px;
-
-    line-height: 1.4;
-
-    color: var(--text);
-
-}
-
-
-.confirmation-box {
-
-    max-width: 390px;
-
-    margin-top: 23px;
-
-    padding:
-        17px 20px;
-
-    border:
-        1px solid
-        rgba(122,38,56,.28);
-
-    background:
-        rgba(255,255,255,.42);
-
-}
-
-
-.confirmation-title {
-
-    font-size: 9px;
-
-    letter-spacing: 2.5px;
-
-    color: var(--marsala);
-
-    margin-bottom: 9px;
-
-}
-
-
-.confirmation-text {
-
-    font-family:
-        'Cormorant Garamond',
-        serif;
-
-    font-size: 17px;
-
-    line-height: 1.4;
-
-    color: var(--text);
-
-}
-
-
-.site-button {
-
-    display: inline-block;
-
-    margin-top: 23px;
-
-    padding:
-        14px 25px;
-
-    border:
-        1px solid
-        var(--marsala);
-
-    color: var(--marsala);
-
-    text-decoration: none;
-
-    font-size: 9px;
-
-    letter-spacing: 2.5px;
-
-}
-
-
-.site-button:hover {
-
-    background: var(--marsala);
-
-    color: white;
-
-}
-
-
-.site-description {
-
-    margin-top: 9px;
-
-    font-size: 9px;
-
-    color: #938372;
-
-}
-
-
-.signature {
-
-    margin-top: 25px;
-
-    font-family:
-        'Cormorant Garamond',
-        serif;
-
-    font-size: 18px;
-
-    color: var(--marsala);
-
-}
-
-
-/* =====================================================
-   RESPONSIVO
-===================================================== */
-
-@media (max-height:700px) {
-
-    #screen2,
-    #screen3,
-    #screen4 {
-
-        padding-top: 35px;
-
-        padding-bottom: 35px;
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" href="favicon-NR-dourado.png">
+
+  <!-- WHATSAPP / REDES SOCIAIS -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Nathalia & Raphael">
+  <meta property="og:description" content="14 · 11 · 2026 · Uma nova história começa">
+  <meta property="og:image" content="https://mmmartho-ui.github.io/convite-nathalia-raphael/miniatura-whatsapp.png">
+  <meta property="og:url" content="https://mmmartho-ui.github.io/convite-nathalia-raphael/">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nathalia & Raphael">
+  <meta name="twitter:description" content="14 · 11 · 2026 · Uma nova história começa">
+  <meta name="twitter:image" content="https://mmmartho-ui.github.io/convite-nathalia-raphael/miniatura-whatsapp.png">
+
+  <title>Nathalia & Raphael</title>
+
+  <style>
+
+    :root {
+      --marsala: #7A2638;
+      --marsala-dark: #64202F;
+      --gold: #987A4D;
+      --brown: #563D28;
+      --text: #675847;
+      --soft: #F8F4ED;
     }
 
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      width: 100%;
+      min-height: 100%;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: #f8f4ed;
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* =========================
+       TELAS
+    ========================= */
+
+    .screen {
+      display: none;
+      position: relative;
+      min-height: 100vh;
+      width: 100%;
+      padding: 28px 22px;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(255,255,255,0.90) 0%,
+          rgba(248,244,237,0.96) 65%,
+          rgba(238,229,216,1) 100%
+        );
+    }
+
+    .screen.active {
+      display: flex;
+    }
+
+    .content {
+      position: relative;
+      width: 100%;
+      max-width: 520px;
+      min-height: calc(100vh - 56px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      z-index: 2;
+    }
+
+    /* =========================
+       MOLDURA
+    ========================= */
+
+    .frame {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      bottom: 14px;
+      left: 14px;
+      border: 1px solid rgba(122, 38, 56, 0.30);
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    .frame::before {
+      content: "";
+      position: absolute;
+      top: 7px;
+      right: 7px;
+      bottom: 7px;
+      left: 7px;
+      border: 1px solid rgba(151, 121, 77, 0.25);
+    }
+
+    /* =========================
+       ORNAMENTOS FLORAIS
+    ========================= */
+
+    .floral {
+      position: absolute;
+      width: 115px;
+      height: 145px;
+      z-index: 1;
+      opacity: 0.82;
+      pointer-events: none;
+    }
+
+    .floral::before {
+      content: "";
+      position: absolute;
+      width: 2px;
+      height: 125px;
+      background: var(--gold);
+      transform: rotate(-38deg);
+      left: 57px;
+      top: 12px;
+      transform-origin: bottom;
+    }
+
+    .floral span {
+      position: absolute;
+      width: 38px;
+      height: 15px;
+      background: var(--marsala);
+      border-radius: 100% 0 100% 0;
+      transform-origin: center;
+    }
+
+    .floral span:nth-child(1) {
+      left: 22px;
+      top: 30px;
+      transform: rotate(-38deg);
+    }
+
+    .floral span:nth-child(2) {
+      left: 47px;
+      top: 48px;
+      transform: rotate(15deg);
+    }
+
+    .floral span:nth-child(3) {
+      left: 18px;
+      top: 70px;
+      transform: rotate(-48deg);
+    }
+
+    .floral span:nth-child(4) {
+      left: 52px;
+      top: 89px;
+      transform: rotate(12deg);
+    }
+
+    .floral span:nth-child(5) {
+      left: 38px;
+      top: 110px;
+      transform: rotate(-32deg);
+    }
+
+    .floral.top-left {
+      top: 3px;
+      left: 3px;
+      transform: rotate(-8deg);
+    }
+
+    .floral.top-right {
+      top: 3px;
+      right: 3px;
+      transform: scaleX(-1) rotate(-8deg);
+    }
+
+    .floral.bottom-left {
+      bottom: 3px;
+      left: 3px;
+      transform: scaleY(-1) rotate(-8deg);
+    }
+
+    .floral.bottom-right {
+      bottom: 3px;
+      right: 3px;
+      transform: scale(-1) rotate(-8deg);
+    }
+
+    /* =========================
+       TELA 1
+    ========================= */
+
+    #screen1 {
+      background:
+        radial-gradient(
+          circle at center,
+          #fffdf9 0%,
+          #f8f4ed 65%,
+          #eee4d8 100%
+        );
+    }
+
+    .intro-content {
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .invited {
+      color: var(--marsala);
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 17px;
+      font-weight: 500;
+    }
+
+    .monogram {
+      width: min(250px, 65vw);
+      height: auto;
+      display: block;
+      margin-bottom: 15px;
+      object-fit: contain;
+    }
+
+    .names {
+      color: var(--marsala);
+      font-size: clamp(29px, 8vw, 43px);
+      letter-spacing: 7px;
+      font-weight: 500;
+      line-height: 1.25;
+    }
+
+    .amp {
+      color: var(--gold);
+      font-size: 25px;
+      margin: 5px 0;
+      font-weight: normal;
+    }
+
+    .date {
+      color: var(--gold);
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 6px;
+      margin-top: 19px;
+    }
+
+    /* =========================
+       BOTÕES
+    ========================= */
+
+    button,
+    a {
+      font-family: inherit;
+    }
+
+    .main-button,
+    .navigation-button,
+    .map-button,
+    .site-button {
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .main-button {
+      margin-top: 31px;
+      padding: 14px 29px;
+      min-width: 190px;
+      border: 1px solid var(--marsala);
+      background: var(--marsala);
+      color: white;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      box-shadow: 0 8px 22px rgba(122, 38, 56, 0.16);
+    }
+
+    .main-button:hover {
+      background: var(--marsala-dark);
+      transform: translateY(-1px);
+    }
+
+    /* =========================
+       TELA 2
+    ========================= */
+
+    .event-content {
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 42px 0 35px;
+    }
+
+    .event-intro {
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .event-title {
+      color: var(--marsala);
+      font-size: 28px;
+      font-weight: normal;
+      margin-bottom: 5px;
+    }
+
+    .event-subtitle {
+      color: var(--text);
+      font-size: 13px;
+      font-style: italic;
+      margin-bottom: 20px;
+    }
 
     .couple-photo {
-
-        width:
-            min(52vw,220px);
-
-        margin-bottom: 12px;
-
+      width: min(350px, 82vw);
+      height: auto;
+      display: block;
+      border: 1px solid var(--gold);
+      padding: 4px;
+      background: rgba(255,255,255,0.6);
+      box-shadow: 0 12px 30px rgba(69,48,28,0.12);
     }
 
+    .event-names {
+      color: var(--marsala);
+      font-size: 23px;
+      letter-spacing: 4px;
+      margin-top: 20px;
+    }
+
+    .event-date {
+      color: var(--gold);
+      font-size: 19px;
+      letter-spacing: 5px;
+      margin-top: 12px;
+    }
+
+    .event-time {
+      color: var(--marsala);
+      font-size: 14px;
+      letter-spacing: 4px;
+      margin-top: 7px;
+    }
 
     .event-divider {
-
-        margin:
-            10px 0;
-
+      width: 80px;
+      height: 1px;
+      background: var(--gold);
+      margin: 20px auto 16px;
     }
 
+    .location-label {
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 4px;
+      margin-bottom: 7px;
+    }
+
+    .venue {
+      color: var(--marsala);
+      font-size: 21px;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+
+    .address {
+      color: var(--text);
+      font-size: 13px;
+      line-height: 1.6;
+      max-width: 330px;
+    }
+
+    .map-button {
+      margin-top: 14px;
+      padding: 10px 18px;
+      border: 1px solid var(--gold);
+      color: var(--marsala);
+      background: transparent;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .map-button:hover {
+      background: rgba(152,122,77,0.08);
+    }
 
     .event-message {
-
-        margin-top: 12px;
-
-        padding-top: 12px;
-
+      max-width: 340px;
+      margin-top: 21px;
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.7;
+      font-style: italic;
     }
 
+    /* =========================
+       TELA 3
+    ========================= */
 
-    .history-gallery {
-
-        gap: 10px;
-
+    .history-content {
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 44px 0 35px;
     }
 
+    .history-label {
+      color: var(--marsala);
+      font-size: 10px;
+      letter-spacing: 4px;
+      margin-bottom: 7px;
+    }
+
+    .history-title {
+      color: var(--marsala);
+      font-size: 28px;
+      font-weight: normal;
+      margin-bottom: 4px;
+    }
+
+    .history-subtitle {
+      color: var(--gold);
+      font-size: 13px;
+      font-style: italic;
+      margin-bottom: 22px;
+    }
 
     .history-photo {
-
-        max-width: 290px;
-
+      display: block;
+      width: 100%;
+      max-width: 350px;
+      height: auto;
+      object-fit: contain;
+      border: 1px solid var(--gold);
+      padding: 4px;
+      background: rgba(255,255,255,0.55);
+      box-shadow: 0 10px 25px rgba(69,48,28,0.10);
+      margin-bottom: 15px;
     }
 
+    .history-photo.photo1 {
+      border-radius: 110px 110px 18px 18px;
+    }
+
+    .history-photo.photo2 {
+      border-radius: 18px;
+    }
+
+    .history-photo.photo3 {
+      border-radius: 18px 18px 110px 110px;
+    }
 
     .history-text {
-
-        margin-top: 15px;
-
-        font-size: 16px;
-
+      max-width: 345px;
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.75;
+      margin-top: 7px;
     }
 
-
-    .countdown {
-
-        margin-top: 20px;
-
+    .history-text p {
+      margin-bottom: 14px;
     }
 
-
-    .countdown-divider {
-
-        margin:
-            18px 0 14px;
-
+    .quote {
+      margin: 19px auto 18px;
+      max-width: 330px;
+      color: var(--marsala);
+      font-size: 16px;
+      line-height: 1.7;
+      font-style: italic;
     }
 
+    /* =========================
+       NAVEGAÇÃO
+    ========================= */
+
+    .navigation {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 13px;
+      margin-top: 25px;
+    }
+
+    .navigation-button {
+      padding: 12px 23px;
+      min-width: 155px;
+      background: transparent;
+      color: var(--marsala);
+      border: 1px solid var(--gold);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .navigation-button.primary {
+      background: var(--marsala);
+      border-color: var(--marsala);
+      color: white;
+    }
+
+    .navigation-button:hover {
+      transform: translateY(-1px);
+    }
+
+    /* =========================
+       TELA 4
+    ========================= */
+
+    .final-content {
+      flex-direction: column;
+      padding: 35px 0;
+    }
+
+    .final-label {
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 9px;
+    }
+
+    .final-title {
+      color: var(--marsala);
+      font-size: clamp(28px, 8vw, 39px);
+      line-height: 1.2;
+      font-weight: normal;
+    }
+
+    .final-date {
+      color: var(--gold);
+      font-size: 19px;
+      letter-spacing: 5px;
+      margin-top: 18px;
+    }
+
+    .final-time {
+      color: var(--marsala);
+      font-size: 12px;
+      letter-spacing: 3px;
+      margin-top: 7px;
+    }
+
+    .count-box {
+      margin-top: 30px;
+      width: 145px;
+      padding: 17px 12px;
+      border-top: 1px solid var(--gold);
+      border-bottom: 1px solid var(--gold);
+    }
+
+    .count-number {
+      display: block;
+      color: var(--marsala);
+      font-size: 42px;
+      line-height: 1;
+    }
+
+    .count-label {
+      display: block;
+      color: var(--gold);
+      font-size: 9px;
+      letter-spacing: 3px;
+      margin-top: 7px;
+    }
+
+    .final-message {
+      max-width: 340px;
+      margin-top: 27px;
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.75;
+      font-style: italic;
+    }
+
+    /* =========================
+       CONFIRMAÇÃO
+    ========================= */
 
     .confirmation-box {
-
-        margin-top: 15px;
-
+      width: min(350px, 88vw);
+      margin-top: 23px;
+      padding: 18px 18px;
+      border: 1px solid rgba(152,122,77,0.45);
+      background: rgba(255,255,255,0.40);
     }
 
+    .confirmation-title {
+      color: var(--marsala);
+      font-size: 10px;
+      letter-spacing: 3px;
+      margin-bottom: 9px;
+    }
+
+    .confirmation-text {
+      color: var(--text);
+      font-size: 12px;
+      line-height: 1.65;
+    }
+
+    .site-button {
+      margin-top: 20px;
+      padding: 13px 20px;
+      border: 1px solid var(--marsala);
+      background: var(--marsala);
+      color: white;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .site-button:hover {
+      background: var(--marsala-dark);
+    }
+
+    .site-description {
+      max-width: 310px;
+      margin-top: 9px;
+      color: var(--text);
+      font-size: 11px;
+      line-height: 1.5;
+    }
 
     .signature {
-
-        margin-top: 15px;
-
+      margin-top: 24px;
+      color: var(--marsala);
+      font-size: 16px;
+      font-style: italic;
     }
 
-}
+    /* =========================
+       RESPONSIVO
+    ========================= */
 
-</style>
+    @media (max-width: 380px) {
 
+      .screen {
+        padding: 22px 17px;
+      }
+
+      .frame {
+        top: 11px;
+        right: 11px;
+        bottom: 11px;
+        left: 11px;
+      }
+
+      .monogram {
+        width: 220px;
+      }
+
+      .names {
+        font-size: 27px;
+        letter-spacing: 5px;
+      }
+
+      .event-title,
+      .history-title {
+        font-size: 25px;
+      }
+
+      .couple-photo,
+      .history-photo {
+        max-width: 315px;
+      }
+    }
+
+  </style>
 </head>
-
 
 <body>
 
+  <!-- ==================================================
+       TELA 1 — ABERTURA
+  =================================================== -->
 
-<!-- =====================================================
-     TELA 1
-===================================================== -->
-
-<section
-    id="screen1"
-    class="screen active"
->
-
+  <section id="screen1" class="screen active">
 
     <div class="frame"></div>
 
-
     <div class="floral top-left">
-        <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-
 
     <div class="floral top-right">
-        <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-
 
     <div class="floral bottom-left">
-        <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-
 
     <div class="floral bottom-right">
-        <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
 
+    <div class="content intro-content">
 
-    <div class="intro-content">
+      <div class="invited">
+        VOCÊ ESTÁ CONVIDADO
+      </div>
+
+      <img
+        class="monogram"
+        src="monograma-NR-dourado.png"
+        alt="Monograma Nathalia e Raphael"
+      >
+
+      <div class="names">
+        NATHALIA
+      </div>
+
+      <div class="amp">
+        &
+      </div>
+
+      <div class="names">
+        RAPHAEL
+      </div>
+
+      <div class="date">
+        14 · 11 · 2026
+      </div>
+
+      <button
+        class="main-button"
+        onclick="openInvitation()"
+      >
+        ABRIR CONVITE
+      </button>
+
+    </div>
+
+  </section>
 
 
-        <div class="intro">
-            Uma nova história começa
-        </div>
+  <!-- ==================================================
+       TELA 2 — EVENTO
+  =================================================== -->
 
+  <section id="screen2" class="screen">
 
-        <img
-            class="monogram"
-            src="monograma-NR-dourado.png"
-            alt="Monograma Nathalia e Raphael"
-        >
+    <div class="frame"></div>
 
+    <div class="floral top-left">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 
-        <div class="names">
+    <div class="floral top-right">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 
-            NATHALIA
+    <div class="floral bottom-left">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 
-            <span class="amp">
-                &amp;
-            </span>
+    <div class="floral bottom-right">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 
-            RAPHAEL
+    <div class="content event-content">
 
-        </div>
+      <div class="event-intro">
+        COM MUITA ALEGRIA
+      </div>
 
+      <h1 class="event-title">
+        Você está convidado
+      </h1>
 
-        <div class="date">
-            14 · 11 · 2026
-        </div>
+      <div class="event-subtitle">
+        para celebrar conosco este momento especial
+      </div>
 
+      <img
+        class="couple-photo"
+        src="foto-casal.JPEG"
+        alt="Nathalia e Raphael"
+      >
+
+      <div class="event-names">
+        Nathalia & Raphael
+      </div>
+
+      <div class="event-date">
+        14 · 11 · 2026
+      </div>
+
+      <div class="event-time">
+        16H30
+      </div>
+
+      <div class="event-divider"></div>
+
+      <div class="location-label">
+        LOCAL
+      </div>
+
+      <div class="venue">
+        ESPAÇO PARAÍSO
+      </div>
+
+      <div class="address">
+        R. Wilson Stefani, 510<br>
+        Jardim Vitória · Várzea Paulista – SP<br>
+        13236-115
+      </div>
+
+      <a
+        class="map-button"
+        href="https://www.google.com/maps/search/?api=1&query=Espa%C3%A7o%20Para%C3%ADso%2C%20R.%20Wilson%20Stefani%2C%20510%2C%20Jardim%20Vit%C3%B3ria%2C%20V%C3%A1rzea%20Paulista%20-%20SP%2C%2013236-115"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        VER LOCAL NO MAPA
+      </a>
+
+      <div class="event-message">
+        Um dia especial merece ser celebrado ao lado de quem amamos.
+      </div>
+
+      <div class="navigation">
 
         <button
-            class="main-button"
-            onclick="openInvitation()"
+          class="navigation-button primary"
+          onclick="openScreen3()"
         >
-            ABRIR CONVITE
+          CONTINUAR →
         </button>
 
+      </div>
 
     </div>
 
-
-</section>
-
+  </section>
 
 
-<!-- =====================================================
-     TELA 2
-===================================================== -->
+  <!-- ==================================================
+       TELA 3 — NOSSA HISTÓRIA
+  =================================================== -->
 
-<section
-    id="screen2"
-    class="screen"
->
-
+  <section id="screen3" class="screen">
 
     <div class="frame"></div>
 
-
     <div class="floral top-left">
-        <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-
 
     <div class="floral top-right">
-        <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-
 
     <div class="floral bottom-left">
-        <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-
 
     <div class="floral bottom-right">
-        <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
 
+    <div class="content history-content">
 
-    <div class="event-content">
+      <div class="history-label">
+        A NOSSA HISTÓRIA
+      </div>
+
+      <h1 class="history-title">
+        Nathalia & Raphael
+      </h1>
+
+      <div class="history-subtitle">
+        Uma história que está apenas começando
+      </div>
 
 
-        <div class="event-intro">
-            COM MUITA ALEGRIA
-        </div>
+      <img
+        class="history-photo photo1"
+        src="foto-tela3-1.JPEG"
+        alt="Nathalia e Raphael"
+      >
+
+      <img
+        class="history-photo photo2"
+        src="foto-tela3-2.JPEG"
+        alt="Nathalia e Raphael"
+      >
+
+      <img
+        class="history-photo photo3"
+        src="foto-tela3-3.JPEG"
+        alt="Nathalia e Raphael"
+      >
 
 
-        <h1 class="event-title">
-            Vamos celebrar!
-        </h1>
+      <div class="history-text">
+
+        <p>
+          Tudo começou de um jeito inesperado.
+          Em meio a tantos caminhos e encontros,
+          a vida fez nossos caminhos se cruzarem.
+        </p>
+
+        <p>
+          O que começou com um encontro se transformou
+          em companheirismo, amor, sonhos compartilhados
+          e a certeza de que queríamos construir uma vida juntos.
+        </p>
+
+        <p>
+          Agora, chegou o momento de transformar esse amor
+          em uma nova etapa da nossa história.
+        </p>
+
+        <p>
+          E queremos viver esse dia ao lado de quem
+          faz parte da nossa caminhada.
+        </p>
+
+      </div>
 
 
-        <img
-            src="foto-casal.JPEG"
-            class="couple-photo"
-            alt="Nathalia e Raphael"
+      <div class="quote">
+        “Deus mudou o teu caminho até juntares com o meu
+        e guardou a tua vida separando-a para mim.”
+      </div>
+
+
+      <div class="navigation">
+
+        <button
+          class="navigation-button"
+          onclick="backToScreen2()"
         >
+          ← VOLTAR
+        </button>
 
-
-        <div class="event-names">
-            Nathalia &amp; Raphael
-        </div>
-
-
-        <div class="event-date">
-            14 · 11 · 2026
-        </div>
-
-
-        <div class="event-time">
-            16H30
-        </div>
-
-
-        <div class="event-divider"></div>
-
-
-        <div class="location-label">
-            LOCAL
-        </div>
-
-
-        <div class="venue">
-            ESPAÇO PARAÍSO
-        </div>
-
-
-        <div class="address">
-
-            R. Wilson Stefani, 510<br>
-
-            Jardim Vitória · Várzea Paulista – SP<br>
-
-            13236-115
-
-        </div>
-
-
-        <a
-            class="map-button"
-            href="https://www.google.com/maps/search/?api=1&query=Espa%C3%A7o%20Para%C3%ADso%2C%20R.%20Wilson%20Stefani%2C%20510%2C%20Jardim%20Vit%C3%B3ria%2C%20V%C3%A1rzea%20Paulista%20-%20SP%2C%2013236-115"
-            target="_blank"
+        <button
+          class="navigation-button primary"
+          onclick="openScreen4()"
         >
-            VER LOCAL NO MAPA
-        </a>
+          CONTINUAR →
+        </button>
 
-
-        <div class="event-message">
-
-            Um dia especial merece ser celebrado
-            ao lado de quem amamos.
-
-        </div>
-
-
-        <div class="navigation">
-
-
-            <button
-                class="navigation-button primary"
-                onclick="openScreen3()"
-            >
-                CONTINUAR →
-            </button>
-
-
-        </div>
-
+      </div>
 
     </div>
 
-
-</section>
-
+  </section>
 
 
-<!-- =====================================================
-     TELA 3
-===================================================== -->
+  <!-- ==================================================
+       TELA 4 — CONTAGEM / FINAL
+  =================================================== -->
 
-<section
-    id="screen3"
-    class="screen"
->
-
+  <section id="screen4" class="screen">
 
     <div class="frame"></div>
 
-
     <div class="floral top-left">
-        <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-
 
     <div class="floral top-right">
-        <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-
 
     <div class="floral bottom-left">
-        <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-
 
     <div class="floral bottom-right">
-        <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
 
 
-    <div class="history-content">
+    <div class="content final-content">
 
+      <div class="final-label">
+        ESTÁ CHEGANDO
+      </div>
 
-        <div class="history-small">
-            A NOSSA HISTÓRIA
-        </div>
+      <h1 class="final-title">
+        O NOSSO<br>
+        GRANDE DIA
+      </h1>
 
+      <div class="final-date">
+        14 · 11 · 2026
+      </div>
 
-        <h1 class="history-title">
-            Nathalia &amp; Raphael
-        </h1>
+      <div class="final-time">
+        SÁBADO · 16H30
+      </div>
 
 
-        <div class="history-names">
-            Uma história que está apenas começando
-        </div>
+      <div class="count-box">
 
-
-        <div class="history-gallery">
-
-
-            <img
-                src="foto-tela3-1.JPEG"
-                class="history-photo photo1"
-                alt="Nathalia e Raphael"
-            >
-
-
-            <img
-                src="foto-tela3-2.JPEG"
-                class="history-photo photo2"
-                alt="Nathalia e Raphael"
-            >
-
-
-            <img
-                src="foto-tela3-3.JPEG"
-                class="history-photo photo3"
-                alt="Nathalia e Raphael"
-            >
-
-
-        </div>
-
-
-        <div class="history-text">
-
-
-            <p>
-
-                Tudo começou de um jeito inesperado.
-                Em meio a tantos caminhos e encontros,
-                a vida fez nossos caminhos se cruzarem.
-
-            </p>
-
-
-            <p>
-
-                O que começou com um encontro se transformou
-                em companheirismo, amor, sonhos compartilhados
-                e a certeza de que queríamos construir uma vida juntos.
-
-            </p>
-
-
-            <p>
-
-                Agora, chegou o momento de transformar esse amor
-                em uma nova etapa da nossa história.
-
-            </p>
-
-
-            <p>
-
-                E queremos viver esse dia ao lado de quem
-                faz parte da nossa caminhada.
-
-            </p>
-
-
-        </div>
-
-
-        <div class="quote">
-
-            “Deus mudou o teu caminho até juntares com o meu
-            e guardou a tua vida separando-a para mim.”
-
-        </div>
-
-
-        <div class="navigation">
-
-
-            <button
-                class="navigation-button back"
-                onclick="backToScreen2()"
-            >
-                ← VOLTAR
-            </button>
-
-
-            <button
-                class="navigation-button primary"
-                onclick="openScreen4()"
-            >
-                CONTINUAR →
-            </button>
-
-
-        </div>
-
-
-    </div>
-
-
-</section>
-
-
-
-<!-- =====================================================
-     TELA 4
-===================================================== -->
-
-<section
-    id="screen4"
-    class="screen"
->
-
-
-    <div class="frame"></div>
-
-
-    <div class="floral top-left">
-        <span></span>
-    </div>
-
-
-    <div class="floral top-right">
-        <span></span>
-    </div>
-
-
-    <div class="floral bottom-left">
-        <span></span>
-    </div>
-
-
-    <div class="floral bottom-right">
-        <span></span>
-    </div>
-
-
-    <div class="countdown-content">
-
-
-        <div class="countdown-small">
-            ESTÁ CHEGANDO
-        </div>
-
-
-        <h1 class="countdown-title">
-
-            O NOSSO<br>
-            GRANDE DIA
-
-        </h1>
-
-
-        <div class="countdown-date">
-            14 · 11 · 2026
-        </div>
-
-
-        <div class="countdown-subtitle">
-            SÁBADO · 16H30
-        </div>
-
-
-        <!-- CONTADOR -->
-
-        <div class="countdown">
-
-
-            <div class="count-box">
-
-
-                <div
-                    class="count-number"
-                    id="days"
-                >
-                    00
-                </div>
-
-
-                <div class="count-label">
-                    DIAS
-                </div>
-
-
-            </div>
-
-
-        </div>
-
-
-        <div class="countdown-divider"></div>
-
-
-        <div class="countdown-message">
-
-            A contagem já começou... ✦
-
-            <br><br>
-
-            Estamos preparando tudo com muito carinho
-            para viver esse momento inesquecível
-            ao lado de vocês.
-
-        </div>
-
-
-        <div class="confirmation-box">
-
-
-            <div class="confirmation-title">
-                SOBRE A CONFIRMAÇÃO
-            </div>
-
-
-            <div class="confirmation-text">
-
-                Em breve, você receberá uma mensagem
-                com as informações para confirmação
-                da sua presença.
-
-                <br><br>
-
-                Fique atento(a) ao seu celular. 💌
-
-            </div>
-
-
-        </div>
-
-
-        <a
-            class="site-button"
-            href="https://nathaliaraphael.com.br"
-            target="_blank"
+        <span
+          id="days"
+          class="count-number"
         >
-            VISITAR SITE DOS NOIVOS
-        </a>
+          00
+        </span>
+
+        <span class="count-label">
+          DIAS
+        </span>
+
+      </div>
 
 
-        <div class="site-description">
+      <div class="final-message">
 
-            Confira todos os detalhes do nosso casamento
-            em nosso site.
+        A contagem já começou... ✦
 
+        <br><br>
+
+        Estamos preparando tudo com muito carinho
+        para viver esse momento inesquecível
+        ao lado de vocês.
+
+      </div>
+
+
+      <div class="confirmation-box">
+
+        <div class="confirmation-title">
+          SOBRE A CONFIRMAÇÃO
         </div>
 
-
-        <div class="signature">
-
-            Com amor,<br>
-            Nathalia &amp; Raphael
-
+        <div class="confirmation-text">
+          Em breve, você receberá uma mensagem com
+          as informações para confirmação da sua presença.
+          Fique atento(a) ao seu celular. 💌
         </div>
 
-
-        <div class="navigation">
-
-
-            <button
-                class="navigation-button back"
-                onclick="backToScreen3()"
-            >
-                ← VOLTAR
-            </button>
+      </div>
 
 
-        </div>
+      <a
+        class="site-button"
+        href="https://nathaliaraphael.com.br"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        VISITAR SITE DOS NOIVOS
+      </a>
 
+      <div class="site-description">
+        Confira todos os detalhes do nosso casamento
+        em nosso site.
+      </div>
+
+
+      <div class="signature">
+        Com amor,<br>
+        Nathalia & Raphael
+      </div>
+
+
+      <div class="navigation">
+
+        <button
+          class="navigation-button"
+          onclick="backToScreen3()"
+        >
+          ← VOLTAR
+        </button>
+
+      </div>
 
     </div>
 
-
-</section>
-
+  </section>
 
 
-<script>
+  <!-- ==================================================
+       JAVASCRIPT
+  =================================================== -->
 
-/* =====================================================
-   NAVEGAÇÃO
-===================================================== */
+  <script>
 
+    function showScreen(screenId) {
 
-function showScreen(id) {
+      document.querySelectorAll(".screen").forEach(function(screen) {
+        screen.classList.remove("active");
+      });
 
+      document.getElementById(screenId).classList.add("active");
 
-    document
-        .querySelectorAll('.screen')
-        .forEach(screen => {
-
-            screen.classList.remove('active');
-
-        });
-
-
-    document
-        .getElementById(id)
-        .classList.add('active');
-
-
-    window.scrollTo({
-
+      window.scrollTo({
         top: 0,
+        behavior: "smooth"
+      });
 
-        behavior: 'smooth'
-
-    });
-
-}
+    }
 
 
-function openInvitation() {
-
-    showScreen('screen2');
-
-}
+    function openInvitation() {
+      showScreen("screen2");
+    }
 
 
-function openScreen3() {
-
-    showScreen('screen3');
-
-}
+    function openScreen3() {
+      showScreen("screen3");
+    }
 
 
-function openScreen4() {
-
-    showScreen('screen4');
-
-}
+    function openScreen4() {
+      showScreen("screen4");
+    }
 
 
-function backToScreen2() {
-
-    showScreen('screen2');
-
-}
+    function backToScreen2() {
+      showScreen("screen2");
+    }
 
 
-function backToScreen3() {
-
-    showScreen('screen3');
-
-}
+    function backToScreen3() {
+      showScreen("screen3");
+    }
 
 
-/* =====================================================
-   CONTADOR
-   MESMA LÓGICA DE DIAS DO WEDY
-===================================================== */
+    /* ==========================================
+       CONTAGEM DE DIAS
+       Igual à lógica de calendário do Wedy
+    ========================================== */
 
+    function updateCountdown() {
 
-function updateCountdown() {
+      const now = new Date();
 
-
-    const now = new Date();
-
-
-    /*
-       Pegamos somente a data de hoje,
-       sem considerar o horário.
-
-       Assim o número acompanha
-       a contagem de dias do calendário.
-    */
-
-
-    const today = new Date(
-
+      const today = new Date(
         now.getFullYear(),
-
         now.getMonth(),
-
         now.getDate()
+      );
 
-    );
-
-
-    /*
-       Data do casamento:
-
-       14/11/2026
-
-       O mês é 10 porque o JavaScript
-       começa janeiro em 0.
-    */
-
-
-    const weddingDay = new Date(
-
+      const weddingDay = new Date(
         2026,
-
         10,
-
         14
+      );
 
-    );
+      const oneDay =
+        1000 * 60 * 60 * 24;
 
-
-    const oneDay =
-        1000 *
-        60 *
-        60 *
-        24;
-
-
-    const difference =
-        weddingDay.getTime()
-        -
+      const difference =
+        weddingDay.getTime() -
         today.getTime();
 
-
-    const days =
+      const days =
         Math.max(
-
-            0,
-
-            Math.round(
-
-                difference /
-                oneDay
-
-            )
-
+          0,
+          Math.round(difference / oneDay)
         );
 
+      document.getElementById("days").textContent =
+        String(days).padStart(2, "0");
 
-    document
-        .getElementById('days')
-        .textContent =
-
-        String(days)
-        .padStart(2,'0');
-
-}
+    }
 
 
-/* =====================================================
-   INICIALIZAÇÃO
-===================================================== */
+    updateCountdown();
 
+    setInterval(
+      updateCountdown,
+      60000
+    );
 
-updateCountdown();
-
-
-/*
-   Atualiza diariamente.
-   Como o contador agora mostra somente
-   DIAS, não precisamos atualizar a cada segundo.
-*/
-
-
-setInterval(
-
-    updateCountdown,
-
-    60 * 1000
-
-);
-
-</script>
-
+  </script>
 
 </body>
-
 </html>
