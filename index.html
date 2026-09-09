@@ -285,7 +285,9 @@
 
     .names {
       display: flex;
+
       flex-direction: column;
+
       align-items: center;
 
       line-height: 0.88;
@@ -348,6 +350,7 @@
       font-family: 'Montserrat', sans-serif;
 
       font-size: 10px;
+
       font-weight: 500;
 
       letter-spacing: 3px;
@@ -398,6 +401,7 @@
 
     .small-title {
       font-size: 11px;
+
       font-weight: 500;
 
       letter-spacing: 4px;
@@ -424,11 +428,11 @@
 
       width: min(64vw, 285px);
 
-      aspect-ratio: 0.84;
+      height: auto;
 
-      object-fit: cover;
+      object-fit: contain;
 
-      object-position: center center;
+      object-position: center;
 
       border-radius: 145px 145px 22px 22px;
 
@@ -502,6 +506,7 @@
       display: flex;
 
       align-items: center;
+
       justify-content: center;
 
       width: 150px;
@@ -511,6 +516,7 @@
 
     .separator-line {
       width: 55px;
+
       height: 1px;
 
       background: rgba(151, 121, 77, 0.55);
@@ -554,6 +560,7 @@
       display: inline-flex;
 
       align-items: center;
+
       justify-content: center;
 
       min-height: 46px;
@@ -640,7 +647,6 @@
 
     /* =====================================================
        TELA 3
-       NOSSA HISTÓRIA
     ===================================================== */
 
     #screen3 {
@@ -656,6 +662,8 @@
         55px;
 
       text-align: center;
+
+      overflow-y: auto;
     }
 
     #screen3.active {
@@ -681,7 +689,7 @@
 
 
     /* =====================================================
-       CABEÇALHO
+       CABEÇALHO TELA 3
     ===================================================== */
 
     .history-label {
@@ -711,6 +719,9 @@
 
     /* =====================================================
        GALERIA
+       IMPORTANTE:
+       NÃO FORÇAMOS ALTURA.
+       CADA FOTO MANTÉM SUA PROPORÇÃO ORIGINAL.
     ===================================================== */
 
     .history-gallery {
@@ -724,7 +735,7 @@
 
       gap: 13px;
 
-      margin-bottom: 24px;
+      margin-bottom: 28px;
     }
 
     .history-photo {
@@ -732,9 +743,13 @@
 
       width: 100%;
 
-      max-width: 330px;
+      max-width: 350px;
 
-      object-fit: cover;
+      height: auto;
+
+      object-fit: contain;
+
+      object-position: center;
 
       border: 1px solid rgba(157, 126, 78, 0.55);
 
@@ -746,27 +761,30 @@
         0 10px 25px rgba(69, 48, 28, 0.10);
     }
 
-    .history-photo.photo1 {
-      height: 215px;
 
+    /* FOTO 1 */
+
+    .history-photo.photo1 {
       border-radius: 110px 110px 18px 18px;
     }
 
-    .history-photo.photo2 {
-      height: 300px;
 
+    /* FOTO 2 */
+
+    .history-photo.photo2 {
       border-radius: 18px;
     }
 
-    .history-photo.photo3 {
-      height: 300px;
 
+    /* FOTO 3 */
+
+    .history-photo.photo3 {
       border-radius: 18px 18px 110px 110px;
     }
 
 
     /* =====================================================
-       TEXTO DA HISTÓRIA
+       TEXTO
     ===================================================== */
 
     .history-text {
@@ -805,19 +823,19 @@
     }
 
     .verse {
-      max-width: 330px;
+      max-width: 350px;
 
       font-family: 'Cormorant Garamond', serif;
 
-      font-size: 20px;
+      font-size: 21px;
 
-      line-height: 1.35;
+      line-height: 1.4;
 
       font-style: italic;
 
       color: #765d45;
 
-      margin-bottom: 7px;
+      margin-bottom: 8px;
     }
 
     .verse-reference {
@@ -932,7 +950,7 @@
       }
 
       .history-photo {
-        max-width: 360px;
+        max-width: 390px;
       }
 
     }
@@ -994,11 +1012,13 @@
       Uma nova história começa
     </div>
 
+
     <img
       class="monogram"
       src="monograma-NR-dourado.png"
       alt="Monograma Nathalia e Raphael"
     >
+
 
     <div class="names">
 
@@ -1016,9 +1036,11 @@
 
     </div>
 
+
     <div class="date">
       14 · 11 · 2026
     </div>
+
 
     <button
       class="gold-button"
@@ -1170,7 +1192,7 @@
 
   <!-- =====================================================
        TELA 3
-  ===================================================== -->
+    ===================================================== -->
 
   <section id="screen3" class="screen">
 
@@ -1236,7 +1258,8 @@
 
 
       <!-- =================================================
-           GALERIA
+           FOTOS
+           CADA UMA MANTÉM SUA PROPORÇÃO ORIGINAL
       ================================================== -->
 
       <div class="history-gallery">
@@ -1262,16 +1285,18 @@
           alt="Nathalia e Raphael"
         >
 
+
       </div>
 
 
       <!-- =================================================
-           TEXTO
+           HISTÓRIA
       ================================================== -->
 
       <div class="history-text">
 
         <strong>Tudo começou de um jeito inesperado.</strong>
+
         Em meio a tantos caminhos e encontros,
         a vida fez nossos caminhos se cruzarem.
 
@@ -1303,9 +1328,8 @@
 
       <div class="verse">
 
-        “Aonde quer que fores, irei eu;
-        e onde quer que pousares,
-        ali pousarei eu.”
+        “Deus mudou o teu caminho até juntares com o meu
+        e guardou a tua vida separando-a para mim.”
 
       </div>
 
