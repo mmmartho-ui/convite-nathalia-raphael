@@ -533,7 +533,8 @@
 
     .final-content {
       flex-direction: column;
-      padding: 35px 0;
+      justify-content: flex-start;
+      padding: 35px 0 45px;
     }
 
     .final-label {
@@ -598,33 +599,33 @@
     }
 
     /* =========================
-       CONFIRMAÇÃO
+       BLOCOS DA ÚLTIMA TELA
     ========================= */
 
-    .confirmation-box {
-      width: min(350px, 88vw);
-      margin-top: 23px;
-      padding: 18px 18px;
+    .final-card {
+      width: min(390px, 90vw);
+      margin-top: 22px;
+      padding: 20px 18px;
       border: 1px solid rgba(152,122,77,0.45);
-      background: rgba(255,255,255,0.40);
+      background: rgba(255,255,255,0.42);
     }
 
-    .confirmation-title {
+    .final-card-title {
       color: var(--marsala);
-      font-size: 10px;
+      font-size: 11px;
       letter-spacing: 3px;
-      margin-bottom: 9px;
+      margin-bottom: 10px;
     }
 
-    .confirmation-text {
+    .final-card-text {
       color: var(--text);
       font-size: 12px;
-      line-height: 1.65;
+      line-height: 1.7;
     }
 
-    .site-button {
-      margin-top: 20px;
-      padding: 13px 20px;
+    .final-link {
+      margin-top: 15px;
+      padding: 12px 20px;
       border: 1px solid var(--marsala);
       background: var(--marsala);
       color: white;
@@ -633,22 +634,59 @@
       text-transform: uppercase;
     }
 
-    .site-button:hover {
+    .final-link:hover {
       background: var(--marsala-dark);
     }
 
-    .site-description {
-      max-width: 310px;
-      margin-top: 9px;
-      color: var(--text);
-      font-size: 11px;
-      line-height: 1.5;
+    /* =========================
+       DRESS CODE
+    ========================= */
+
+    .dress-code {
+      width: min(390px, 90vw);
+      margin-top: 22px;
+      padding: 21px 19px;
+      border-top: 1px solid rgba(152,122,77,0.50);
+      border-bottom: 1px solid rgba(152,122,77,0.50);
+      text-align: left;
+      background: rgba(255,255,255,0.28);
     }
 
-    .signature {
-      margin-top: 24px;
+    .dress-title {
       color: var(--marsala);
-      font-size: 16px;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-align: center;
+      margin-bottom: 14px;
+    }
+
+    .dress-intro {
+      color: var(--text);
+      font-size: 12px;
+      line-height: 1.7;
+      text-align: center;
+      margin-bottom: 14px;
+    }
+
+    .dress-label {
+      color: var(--marsala);
+      font-size: 12px;
+      font-weight: bold;
+      margin-top: 11px;
+      margin-bottom: 4px;
+    }
+
+    .dress-text {
+      color: var(--text);
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .dress-warning {
+      margin-top: 15px;
+      color: var(--marsala);
+      font-size: 12px;
+      line-height: 1.7;
       font-style: italic;
     }
 
@@ -687,6 +725,12 @@
       .history-photo {
         max-width: 315px;
       }
+
+      .final-card,
+      .dress-code {
+        width: 100%;
+      }
+
     }
 
   </style>
@@ -1014,7 +1058,7 @@
 
 
   <!-- ==================================================
-       TELA 4 — CONTAGEM / FINAL
+       TELA 4 — FINAL
   =================================================== -->
 
   <section id="screen4" class="screen">
@@ -1072,6 +1116,8 @@
         SÁBADO · 16H30
       </div>
 
+      <!-- CONTAGEM -->
+
       <div class="count-box">
 
         <span
@@ -1087,50 +1133,132 @@
 
       </div>
 
-      <div class="final-message">
 
-        A contagem já começou... ✦
+      <!-- CONFIRMAÇÃO -->
 
-        <br><br>
+      <div class="final-card">
 
-        Estamos preparando tudo com muito carinho
-        para viver esse momento inesquecível
-        ao lado de vocês.
-
-      </div>
-
-      <div class="confirmation-box">
-
-        <div class="confirmation-title">
-          SOBRE A CONFIRMAÇÃO
+        <div class="final-card-title">
+          CONFIRMAÇÃO DE PRESENÇA
         </div>
 
-        <div class="confirmation-text">
-          Em breve, você receberá uma mensagem com
-          as informações para confirmação da sua presença.
-          Fique atento(a) ao seu celular. 💌
+        <div class="final-card-text">
+          Para confirmar sua presença, acesse o link abaixo.
+          <br><br>
+          Você pode informar o
+          <strong>nome que está no convite</strong>
+          ou o
+          <strong>PIN que você recebeu</strong>.
+        </div>
+
+        <a
+          class="final-link"
+          href="https://www.nathaliaraphael.com.br/confirmacao-de-presenca"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          CONFIRMAR PRESENÇA
+        </a>
+
+      </div>
+
+
+      <!-- LISTA DE PRESENTES -->
+
+      <div class="final-card">
+
+        <div class="final-card-title">
+          LISTA DE PRESENTES
+        </div>
+
+        <div class="final-card-text">
+          Preparamos nossa lista de presentes com muito carinho.
+          Se desejar nos presentear, você pode acessá-la pelo botão abaixo.
+        </div>
+
+        <a
+          class="final-link"
+          href="https://www.nathaliaraphael.com.br/lista-de-presentes"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          VER LISTA DE PRESENTES
+        </a>
+
+      </div>
+
+
+      <!-- MURAL DE RECADOS -->
+
+      <div class="final-card">
+
+        <div class="final-card-title">
+          DEIXE UM RECADO
+        </div>
+
+        <div class="final-card-text">
+          Queremos guardar para sempre as palavras de carinho
+          de quem faz parte desse momento tão especial.
+        </div>
+
+        <a
+          class="final-link"
+          href="https://www.nathaliaraphael.com.br/mural-de-recados"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          DEIXAR UM RECADO
+        </a>
+
+      </div>
+
+
+      <!-- DRESS CODE -->
+
+      <div class="dress-code">
+
+        <div class="dress-title">
+          DRESS CODE
+        </div>
+
+        <div class="dress-intro">
+          Queremos que todos se sintam confortáveis e elegantes
+          para celebrar esse momento tão especial conosco.
+        </div>
+
+        <div class="dress-label">
+          Traje:
+        </div>
+
+        <div class="dress-text">
+          Esporte Fino / Social.
+        </div>
+
+        <div class="dress-label">
+          Mulheres:
+        </div>
+
+        <div class="dress-text">
+          vestidos midi ou longos, macacões ou conjuntos sofisticados.
+        </div>
+
+        <div class="dress-label">
+          Homens:
+        </div>
+
+        <div class="dress-text">
+          camisa social, calça e sapato. Blazer é bem-vindo.
+        </div>
+
+        <div class="dress-warning">
+          Pedimos, com carinho, que evitem roupas brancas,
+          off-white, marfim ou em tons muito próximos ao vestido da noiva.
         </div>
 
       </div>
 
-      <a
-        class="site-button"
-        href="https://nathaliaraphael.com.br"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        VISITAR SITE DOS NOIVOS
-      </a>
 
-      <div class="site-description">
-        Confira todos os detalhes do nosso casamento
-        em nosso site.
-      </div>
-
-      <div class="signature">
-        Com amor,<br>
-        Nathalia & Raphael
-      </div>
+      <!-- VOLTAR -->
 
       <div class="navigation">
 
@@ -1197,7 +1325,6 @@
 
     /* ==========================================
        CONTAGEM DE DIAS
-       Igual à lógica de calendário do Wedy
     ========================================== */
 
     function updateCountdown() {
