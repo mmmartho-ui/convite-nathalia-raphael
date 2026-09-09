@@ -1,14 +1,46 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
 <title>Nathalia & Raphael</title>
 
+
 <style>
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+/* =====================================================
+   FONTES E CORES
+===================================================== */
+
+@import url(
+'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap'
+);
+
+:root {
+
+    --marsala: #7A2638;
+    --marsala-dark: #64202F;
+
+    --gold: #987A4D;
+
+    --brown: #563D28;
+
+    --text: #675847;
+
+    --soft: #F8F4ED;
+
+}
+
+
+/* =====================================================
+   RESET
+===================================================== */
 
 * {
     box-sizing: border-box;
@@ -16,659 +48,1359 @@
     padding: 0;
 }
 
+
+html,
 body {
-    background:
-        radial-gradient(circle at top, #fffdf9 0%, #f8f4ed 45%, #f3eee5 100%);
-    color: #463a2e;
-    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    min-height: 100%;
 }
+
+
+body {
+
+    background:
+        radial-gradient(
+            circle at top,
+            #fffdf9 0%,
+            #f8f4ed 48%,
+            #f3eee5 100%
+        );
+
+    color: var(--brown);
+
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+
+/* =====================================================
+   TELAS
+===================================================== */
 
 .screen {
+
     display: none;
-    min-height: 100vh;
+
     width: 100%;
+    min-height: 100vh;
+
     position: relative;
-    overflow: hidden;
+
+    overflow-x: hidden;
+
 }
+
 
 .screen.active {
+
     display: flex;
+
 }
 
-/* =========================
+
+/* =====================================================
    MOLDURA
-========================= */
+===================================================== */
 
 .frame {
+
     position: absolute;
+
     top: 14px;
     right: 14px;
     bottom: 14px;
     left: 14px;
-    border: 1px solid rgba(151,121,77,.55);
+
+    border:
+        1px solid
+        rgba(122,38,56,.30);
+
     pointer-events: none;
+
     z-index: 10;
+
 }
 
+
 .frame::before {
+
     content: "";
+
     position: absolute;
+
     top: 7px;
     right: 7px;
     bottom: 7px;
     left: 7px;
-    border: 1px solid rgba(151,121,77,.18);
+
+    border:
+        1px solid
+        rgba(151,121,77,.25);
+
 }
 
-/* =========================
-   FLORES / FOLHAGENS
-========================= */
+
+/* =====================================================
+   FOLHAGENS
+===================================================== */
 
 .floral {
+
     position: absolute;
+
     width: 90px;
     height: 90px;
+
     z-index: 11;
+
     pointer-events: none;
+
+    opacity: .72;
+
 }
+
 
 .floral::before,
 .floral::after {
+
     content: "";
+
     position: absolute;
-    border: 1px solid rgba(151,121,77,.48);
-    border-radius: 100% 0 100% 0;
-    transform: rotate(35deg);
+
+    border:
+        1px solid
+        rgba(122,38,56,.45);
+
+    border-radius:
+        100% 0 100% 0;
+
 }
+
 
 .floral::before {
+
     width: 30px;
     height: 14px;
+
     top: 12px;
     left: 12px;
+
+    transform: rotate(35deg);
+
 }
+
 
 .floral::after {
+
     width: 24px;
     height: 12px;
+
     top: 29px;
     left: 31px;
+
     transform: rotate(-25deg);
+
 }
 
+
 .floral span {
+
     position: absolute;
+
     width: 1px;
     height: 65px;
-    background: rgba(151,121,77,.45);
-    transform: rotate(-42deg);
+
+    background:
+        rgba(151,121,77,.55);
+
+    transform:
+        rotate(-42deg);
+
     top: 5px;
     left: 38px;
+
 }
+
 
 .floral span::before,
 .floral span::after {
+
     content: "";
+
     position: absolute;
+
     width: 23px;
     height: 11px;
-    border: 1px solid rgba(151,121,77,.42);
-    border-radius: 100% 0 100% 0;
+
+    border:
+        1px solid
+        rgba(151,121,77,.45);
+
+    border-radius:
+        100% 0 100% 0;
+
 }
+
 
 .floral span::before {
+
     top: 18px;
     left: -18px;
+
     transform: rotate(-25deg);
+
 }
+
 
 .floral span::after {
+
     top: 37px;
     left: 0;
+
     transform: rotate(25deg);
+
 }
+
 
 .floral.top-left {
+
     top: 13px;
     left: 12px;
+
 }
+
 
 .floral.top-right {
+
     top: 13px;
     right: 12px;
+
     transform: scaleX(-1);
+
 }
+
 
 .floral.bottom-left {
+
     bottom: 13px;
     left: 12px;
+
     transform: scaleY(-1);
+
 }
+
 
 .floral.bottom-right {
+
     bottom: 13px;
     right: 12px;
+
     transform: scale(-1,-1);
+
 }
 
-/* =========================
+
+/* =====================================================
+   NAVEGAÇÃO
+===================================================== */
+
+.navigation {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin-top: 25px;
+
+}
+
+
+.navigation-button {
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--marsala);
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    cursor: pointer;
+
+    padding: 7px 12px;
+
+}
+
+
+.navigation-button.primary {
+
+    border:
+        1px solid
+        rgba(122,38,56,.65);
+
+    padding:
+        12px 28px;
+
+}
+
+
+.navigation-button:hover {
+
+    color: var(--marsala-dark);
+
+}
+
+
+.navigation-button.primary:hover {
+
+    background: var(--marsala);
+
+    color: white;
+
+}
+
+
+/* =====================================================
    TELA 1
-========================= */
+===================================================== */
 
 #screen1 {
+
     align-items: center;
+
     justify-content: center;
+
     text-align: center;
-    background:
-        radial-gradient(circle at center, rgba(255,255,255,.9), rgba(247,242,234,.95));
+
 }
+
 
 .intro-content {
+
     position: relative;
+
     z-index: 5;
+
     width: 90%;
+
     max-width: 430px;
+
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
+
 }
+
 
 .intro {
+
     font-size: 11px;
+
     letter-spacing: 4px;
-    color: #8b7558;
+
+    color: var(--marsala);
+
     margin-bottom: 22px;
+
     text-transform: uppercase;
+
 }
+
 
 .monogram {
-    width: min(55vw, 220px);
+
+    width: min(55vw,220px);
+
     max-width: 220px;
+
     margin-bottom: 22px;
+
 }
+
 
 .names {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(35px, 10vw, 58px);
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size:
+        clamp(35px,10vw,58px);
+
     line-height: .9;
+
     letter-spacing: 5px;
-    color: #563d28;
+
+    color: var(--brown);
+
 }
+
 
 .names .amp {
-    font-size: .55em;
+
     display: block;
+
     margin: 7px 0;
-    color: #967746;
+
+    font-size: .55em;
+
     letter-spacing: 0;
+
+    color: var(--marsala);
+
 }
+
 
 .date {
+
     margin-top: 25px;
+
     font-size: 18px;
+
     font-weight: 500;
+
     letter-spacing: 6px;
-    color: #725d43;
+
+    color: var(--gold);
+
 }
+
 
 .main-button {
+
     margin-top: 35px;
+
+    padding:
+        14px 30px;
+
+    border:
+        1px solid
+        var(--marsala);
+
     background: transparent;
-    border: 1px solid #987a4d;
-    padding: 14px 30px;
-    color: #725b3c;
+
+    color: var(--marsala);
+
     font-size: 11px;
+
     letter-spacing: 3px;
-    font-weight: 500;
+
     cursor: pointer;
-    transition: .3s;
+
 }
+
 
 .main-button:hover {
-    background: #987a4d;
+
+    background: var(--marsala);
+
     color: white;
+
 }
 
-/* =========================
-   TELA 2
-========================= */
+
+/* =====================================================
+   TELA 2 — EVENTO
+===================================================== */
 
 #screen2 {
+
     align-items: center;
+
     justify-content: center;
-    text-align: center;
-    padding: 50px 30px;
+
+    padding:
+        50px 30px 45px;
+
 }
+
 
 .event-content {
+
     position: relative;
+
     z-index: 5;
+
     width: 100%;
-    max-width: 500px;
+
+    max-width: 470px;
+
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
+
+    text-align: center;
+
 }
+
 
 .event-intro {
+
     font-size: 10px;
+
     letter-spacing: 4px;
-    color: #967746;
+
+    color: var(--marsala);
+
     margin-bottom: 7px;
+
 }
+
 
 .event-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(30px, 8vw, 48px);
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size:
+        clamp(31px,8vw,48px);
+
     font-weight: 500;
-    color: #563d28;
+
+    color: var(--brown);
+
     margin-bottom: 20px;
+
 }
+
 
 .couple-photo {
-    width: min(64vw, 285px);
-    border-radius: 150px 150px 20px 20px;
-    border: 1px solid rgba(151,121,77,.6);
+
+    width: min(64vw,285px);
+
+    border-radius:
+        150px 150px 20px 20px;
+
+    border:
+        1px solid
+        var(--gold);
+
     padding: 5px;
-    background: rgba(255,255,255,.7);
-    box-shadow: 0 15px 35px rgba(70,45,25,.12);
-    margin-bottom: 20px;
+
+    background:
+        rgba(255,255,255,.7);
+
+    box-shadow:
+        0 15px 35px
+        rgba(70,45,25,.12);
+
+    margin-bottom: 19px;
+
 }
+
 
 .event-names {
-    font-family: 'Cormorant Garamond', serif;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
     font-size: 25px;
-    color: #563d28;
-    margin-bottom: 5px;
+
+    color: var(--brown);
+
+    margin-bottom: 8px;
+
 }
+
+
+/* DATA */
 
 .event-date {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(27px,7vw,36px);
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size:
+        clamp(30px,8vw,38px);
+
     font-weight: 600;
-    letter-spacing: 3px;
-    color: #80633e;
+
+    letter-spacing: 4px;
+
+    color: var(--marsala);
+
+    line-height: 1;
+
 }
+
+
+/* HORÁRIO */
 
 .event-time {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(27px,8vw,40px);
-    font-weight: 600;
-    color: #563d28;
-    margin-bottom: 8px;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size:
+        clamp(25px,7vw,34px);
+
+    font-weight: 500;
+
+    color: var(--brown);
+
+    margin-top: 4px;
+
 }
+
+
+/* DIVISÓRIA */
+
+.event-divider {
+
+    width: 48px;
+
+    height: 1px;
+
+    background:
+        var(--gold);
+
+    opacity: .55;
+
+    margin:
+        16px 0 15px;
+
+}
+
+
+/* LOCAL */
+
+.location-label {
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: var(--gold);
+
+    margin-bottom: 5px;
+
+}
+
 
 .venue {
-    font-size: clamp(14px,4vw,18px);
-    font-weight: 500;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size:
+        clamp(22px,6vw,29px);
+
+    font-weight: 600;
+
     letter-spacing: 1px;
-    color: #563d28;
+
+    color: var(--marsala);
+
+    line-height: 1;
+
 }
+
 
 .address {
-    font-size: clamp(12px,3.5vw,15px);
-    line-height: 1.5;
-    color: #776a5b;
-    margin-top: 3px;
+
+    margin-top: 7px;
+
+    font-size:
+        clamp(12px,3.4vw,14px);
+
+    line-height: 1.55;
+
+    color: #776A5B;
+
 }
+
+
+/* MAPA */
 
 .map-button {
+
+    display: inline-block;
+
     margin-top: 13px;
-    text-decoration: none;
-    color: #80633e;
-    border-bottom: 1px solid rgba(128,99,62,.45);
+
     padding-bottom: 3px;
-    font-size: 10px;
-    letter-spacing: 2px;
+
+    border-bottom:
+        1px solid
+        rgba(122,38,56,.45);
+
+    text-decoration: none;
+
+    color: var(--marsala);
+
+    font-size: 9px;
+
+    letter-spacing: 2.5px;
+
 }
+
+
+/* TEXTO */
 
 .event-message {
-    margin-top: 18px;
+
     max-width: 350px;
-    font-family: 'Cormorant Garamond', serif;
+
+    margin-top: 21px;
+
+    padding-top: 17px;
+
+    border-top:
+        1px solid
+        rgba(151,121,77,.22);
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
     font-size: 17px;
-    line-height: 1.35;
-    color: #756451;
+
+    line-height: 1.4;
+
+    color: var(--text);
+
 }
 
-.continue-button {
-    margin-top: 22px;
-    background: transparent;
-    border: none;
-    color: #80633e;
-    font-size: 10px;
-    letter-spacing: 3px;
-    cursor: pointer;
-}
 
-/* =========================
+/* =====================================================
    TELA 3
-========================= */
+===================================================== */
 
 #screen3 {
+
     align-items: center;
+
     justify-content: center;
-    padding: 55px 28px;
+
+    padding:
+        55px 28px;
+
     text-align: center;
+
 }
+
 
 .history-content {
+
     width: 100%;
+
     max-width: 430px;
+
     position: relative;
+
     z-index: 5;
+
 }
+
 
 .history-small {
+
     font-size: 10px;
+
     letter-spacing: 4px;
-    color: #967746;
+
+    color: var(--marsala);
+
     margin-bottom: 8px;
+
 }
+
 
 .history-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(34px,9vw,50px);
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size:
+        clamp(34px,9vw,50px);
+
     font-weight: 500;
-    color: #563d28;
+
+    color: var(--brown);
+
     line-height: 1;
+
 }
+
 
 .history-names {
-    font-family: 'Cormorant Garamond', serif;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
     font-size: 21px;
-    color: #8a7255;
-    margin-top: 5px;
-    margin-bottom: 24px;
+
+    color: var(--gold);
+
+    margin:
+        5px 0 24px;
+
 }
+
 
 .history-gallery {
+
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
+
     gap: 16px;
+
 }
+
 
 .history-photo {
+
     display: block;
+
     width: 100%;
+
     max-width: 350px;
+
     height: auto;
+
     object-fit: contain;
-    object-position: center;
-    border: 1px solid rgba(157,126,78,.55);
+
+    border:
+        1px solid
+        var(--gold);
+
     padding: 4px;
-    background: rgba(255,255,255,.55);
-    box-shadow: 0 10px 25px rgba(69,48,28,.10);
+
+    background:
+        rgba(255,255,255,.55);
+
+    box-shadow:
+        0 10px 25px
+        rgba(69,48,28,.10);
+
 }
+
 
 .history-photo.photo1 {
-    border-radius: 110px 110px 18px 18px;
+
+    border-radius:
+        110px 110px 18px 18px;
+
 }
+
 
 .history-photo.photo2 {
+
     border-radius: 18px;
+
 }
+
 
 .history-photo.photo3 {
-    border-radius: 18px 18px 110px 110px;
+
+    border-radius:
+        18px 18px 110px 110px;
+
 }
+
 
 .history-text {
+
     margin-top: 25px;
-    font-family: 'Cormorant Garamond', serif;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
     font-size: 18px;
+
     line-height: 1.45;
-    color: #675847;
+
+    color: var(--text);
+
 }
+
 
 .history-text p {
+
     margin-bottom: 13px;
+
 }
+
 
 .quote {
+
     margin-top: 22px;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 20px;
-    line-height: 1.4;
-    font-style: italic;
-    color: #80633e;
+
     padding: 0 12px;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size: 20px;
+
+    line-height: 1.4;
+
+    font-style: italic;
+
+    color: var(--marsala);
+
 }
 
-.back-button {
-    margin-top: 20px;
-    border: none;
-    background: transparent;
-    color: #80633e;
-    font-size: 10px;
-    letter-spacing: 2px;
-    cursor: pointer;
-}
 
-/* =========================
+/* =====================================================
    TELA 4
-========================= */
+===================================================== */
 
 #screen4 {
+
     align-items: center;
+
     justify-content: center;
+
     text-align: center;
-    padding: 55px 25px;
-    background:
-        radial-gradient(circle at center top,
-        rgba(255,255,255,.95),
-        rgba(247,242,234,.95));
+
+    padding:
+        55px 25px;
+
 }
+
 
 .countdown-content {
+
     width: 100%;
+
     max-width: 480px;
+
     position: relative;
+
     z-index: 5;
+
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
+
 }
+
 
 .countdown-small {
+
     font-size: 10px;
+
     letter-spacing: 4px;
-    color: #967746;
+
+    color: var(--marsala);
+
     margin-bottom: 9px;
+
 }
+
 
 .countdown-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(36px,10vw,58px);
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size:
+        clamp(36px,10vw,58px);
+
     line-height: .9;
+
     font-weight: 500;
-    color: #563d28;
+
+    color: var(--brown);
+
 }
+
 
 .countdown-date {
+
     margin-top: 17px;
-    font-family: 'Cormorant Garamond', serif;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
     font-size: 23px;
+
     letter-spacing: 4px;
-    color: #80633e;
+
+    color: var(--marsala);
+
 }
+
 
 .countdown-subtitle {
+
     margin-top: 7px;
+
     font-size: 10px;
+
     letter-spacing: 3px;
-    color: #89745b;
+
+    color: #89745B;
+
 }
+
+
+/* CONTADOR */
 
 .countdown {
+
     width: 100%;
+
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+
+    grid-template-columns:
+        repeat(4,1fr);
+
     gap: 8px;
+
     margin-top: 28px;
+
 }
+
 
 .count-box {
-    border-top: 1px solid rgba(151,121,77,.55);
-    border-bottom: 1px solid rgba(151,121,77,.30);
-    padding: 12px 4px 10px;
-    background: rgba(255,255,255,.28);
+
+    padding:
+        12px 4px 10px;
+
+    border-top:
+        1px solid
+        rgba(122,38,56,.35);
+
+    border-bottom:
+        1px solid
+        rgba(151,121,77,.30);
+
 }
+
 
 .count-number {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(30px,8vw,43px);
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size:
+        clamp(30px,8vw,43px);
+
     font-weight: 600;
+
+    color: var(--marsala);
+
     line-height: 1;
-    color: #563d28;
+
 }
+
 
 .count-label {
+
     margin-top: 6px;
+
     font-size: 8px;
+
     letter-spacing: 2px;
-    color: #8b765c;
+
+    color: #8B765C;
+
 }
+
 
 .countdown-divider {
+
     width: 45px;
+
     height: 1px;
-    background: rgba(151,121,77,.45);
-    margin: 28px 0 20px;
+
+    background:
+        var(--gold);
+
+    opacity: .55;
+
+    margin:
+        28px 0 20px;
+
 }
+
 
 .countdown-message {
+
     max-width: 390px;
-    font-family: 'Cormorant Garamond', serif;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
     font-size: 19px;
+
     line-height: 1.4;
-    color: #675847;
+
+    color: var(--text);
+
 }
+
 
 .confirmation-box {
-    margin-top: 23px;
-    padding: 17px 20px;
-    border: 1px solid rgba(151,121,77,.35);
-    background: rgba(255,255,255,.38);
+
     max-width: 390px;
+
+    margin-top: 23px;
+
+    padding:
+        17px 20px;
+
+    border:
+        1px solid
+        rgba(122,38,56,.28);
+
+    background:
+        rgba(255,255,255,.42);
+
 }
+
 
 .confirmation-title {
+
     font-size: 9px;
+
     letter-spacing: 2.5px;
-    color: #80633e;
+
+    color: var(--marsala);
+
     margin-bottom: 9px;
+
 }
+
 
 .confirmation-text {
-    font-family: 'Cormorant Garamond', serif;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
     font-size: 17px;
+
     line-height: 1.4;
-    color: #675847;
+
+    color: var(--text);
+
 }
+
 
 .site-button {
+
     display: inline-block;
+
     margin-top: 23px;
-    padding: 14px 25px;
-    border: 1px solid #987a4d;
-    color: #725b3c;
+
+    padding:
+        14px 25px;
+
+    border:
+        1px solid
+        var(--marsala);
+
+    color: var(--marsala);
+
     text-decoration: none;
+
     font-size: 9px;
+
     letter-spacing: 2.5px;
-    transition: .3s;
+
 }
+
 
 .site-button:hover {
-    background: #987a4d;
+
+    background: var(--marsala);
+
     color: white;
+
 }
+
 
 .site-description {
+
     margin-top: 9px;
+
     font-size: 9px;
-    letter-spacing: .5px;
+
     color: #938372;
+
 }
+
 
 .signature {
+
     margin-top: 25px;
-    font-family: 'Cormorant Garamond', serif;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
     font-size: 18px;
-    color: #80633e;
-    letter-spacing: 1px;
+
+    color: var(--marsala);
+
 }
 
-/* =========================
-   RESPONSIVO
-========================= */
 
-@media (max-height: 700px) {
+/* =====================================================
+   MOBILE / ALTURA PEQUENA
+===================================================== */
+
+@media (max-height:700px) {
 
     #screen2,
     #screen3,
     #screen4 {
+
         padding-top: 35px;
         padding-bottom: 35px;
+
     }
+
 
     .couple-photo {
-        width: min(52vw, 220px);
+
+        width:
+            min(52vw,220px);
+
         margin-bottom: 12px;
+
     }
+
+
+    .event-divider {
+
+        margin:
+            10px 0;
+
+    }
+
 
     .event-message {
-        margin-top: 10px;
+
+        margin-top: 12px;
+
+        padding-top: 12px;
+
     }
+
 
     .history-gallery {
+
         gap: 10px;
+
     }
+
 
     .history-photo {
+
         max-width: 290px;
+
     }
+
 
     .history-text {
+
         margin-top: 15px;
+
         font-size: 16px;
+
     }
+
 
     .countdown {
+
         margin-top: 20px;
+
     }
+
 
     .countdown-divider {
-        margin: 18px 0 14px;
+
+        margin:
+            18px 0 14px;
+
     }
+
 
     .confirmation-box {
+
         margin-top: 15px;
+
     }
 
+
     .signature {
+
         margin-top: 15px;
+
     }
+
 }
 
 </style>
+
 </head>
+
 
 <body>
 
-<!-- =========================
-     TELA 1
-========================= -->
 
-<section id="screen1" class="screen active">
+<!-- =====================================================
+     TELA 1
+===================================================== -->
+
+<section
+    id="screen1"
+    class="screen active"
+>
 
     <div class="frame"></div>
 
-    <div class="floral top-left"><span></span></div>
-    <div class="floral top-right"><span></span></div>
-    <div class="floral bottom-left"><span></span></div>
-    <div class="floral bottom-right"><span></span></div>
+
+    <div class="floral top-left">
+        <span></span>
+    </div>
+
+    <div class="floral top-right">
+        <span></span>
+    </div>
+
+    <div class="floral bottom-left">
+        <span></span>
+    </div>
+
+    <div class="floral bottom-right">
+        <span></span>
+    </div>
+
 
     <div class="intro-content">
 
@@ -676,23 +1408,36 @@ body {
             Uma nova história começa
         </div>
 
+
         <img
             class="monogram"
             src="monograma-NR-dourado.png"
             alt="Monograma Nathalia e Raphael"
         >
 
+
         <div class="names">
+
             NATHALIA
-            <span class="amp">&amp;</span>
+
+            <span class="amp">
+                &amp;
+            </span>
+
             RAPHAEL
+
         </div>
+
 
         <div class="date">
             14 · 11 · 2026
         </div>
 
-        <button class="main-button" onclick="openInvitation()">
+
+        <button
+            class="main-button"
+            onclick="openInvitation()"
+        >
             ABRIR CONVITE
         </button>
 
@@ -701,28 +1446,48 @@ body {
 </section>
 
 
-<!-- =========================
-     TELA 2
-========================= -->
 
-<section id="screen2" class="screen">
+<!-- =====================================================
+     TELA 2
+===================================================== -->
+
+<section
+    id="screen2"
+    class="screen"
+>
 
     <div class="frame"></div>
 
-    <div class="floral top-left"><span></span></div>
-    <div class="floral top-right"><span></span></div>
-    <div class="floral bottom-left"><span></span></div>
-    <div class="floral bottom-right"><span></span></div>
+
+    <div class="floral top-left">
+        <span></span>
+    </div>
+
+    <div class="floral top-right">
+        <span></span>
+    </div>
+
+    <div class="floral bottom-left">
+        <span></span>
+    </div>
+
+    <div class="floral bottom-right">
+        <span></span>
+    </div>
+
 
     <div class="event-content">
+
 
         <div class="event-intro">
             COM MUITA ALEGRIA
         </div>
 
+
         <h1 class="event-title">
             Vamos celebrar!
         </h1>
+
 
         <img
             src="foto-casal.JPEG"
@@ -730,27 +1495,53 @@ body {
             alt="Nathalia e Raphael"
         >
 
+
         <div class="event-names">
             Nathalia &amp; Raphael
         </div>
+
+
+        <!-- DATA -->
 
         <div class="event-date">
             14 · 11 · 2026
         </div>
 
+
+        <!-- HORÁRIO -->
+
         <div class="event-time">
             16H30
         </div>
+
+
+        <!-- DIVISÓRIA -->
+
+        <div class="event-divider"></div>
+
+
+        <!-- LOCAL -->
+
+        <div class="location-label">
+            LOCAL
+        </div>
+
 
         <div class="venue">
             ESPAÇO PARAÍSO
         </div>
 
+
         <div class="address">
+
             R. Wilson Stefani, 510<br>
+
             Jardim Vitória · Várzea Paulista – SP<br>
+
             13236-115
+
         </div>
+
 
         <a
             class="map-button"
@@ -760,47 +1551,85 @@ body {
             VER LOCAL NO MAPA
         </a>
 
+
+        <!-- MENSAGEM -->
+
         <div class="event-message">
-            Um dia especial merece ser celebrado ao lado de quem amamos.
+
+            Um dia especial merece ser celebrado
+            ao lado de quem amamos.
+
         </div>
 
-        <button class="continue-button" onclick="openScreen3()">
-            CONTINUAR ✦
-        </button>
+
+        <!-- NAVEGAÇÃO -->
+
+        <div class="navigation">
+
+            <button
+                class="navigation-button primary"
+                onclick="openScreen3()"
+            >
+                CONTINUAR →
+            </button>
+
+        </div>
 
     </div>
 
 </section>
 
 
-<!-- =========================
-     TELA 3
-========================= -->
 
-<section id="screen3" class="screen">
+<!-- =====================================================
+     TELA 3
+===================================================== -->
+
+<section
+    id="screen3"
+    class="screen"
+>
 
     <div class="frame"></div>
 
-    <div class="floral top-left"><span></span></div>
-    <div class="floral top-right"><span></span></div>
-    <div class="floral bottom-left"><span></span></div>
-    <div class="floral bottom-right"><span></span></div>
+
+    <div class="floral top-left">
+        <span></span>
+    </div>
+
+    <div class="floral top-right">
+        <span></span>
+    </div>
+
+    <div class="floral bottom-left">
+        <span></span>
+    </div>
+
+    <div class="floral bottom-right">
+        <span></span>
+    </div>
+
 
     <div class="history-content">
+
 
         <div class="history-small">
             A NOSSA HISTÓRIA
         </div>
 
+
         <h1 class="history-title">
             Nathalia &amp; Raphael
         </h1>
+
 
         <div class="history-names">
             Uma história que está apenas começando
         </div>
 
+
         <div class="history-gallery">
+
 
             <img
                 src="foto-tela3-1.JPEG"
@@ -808,11 +1637,13 @@ body {
                 alt="Nathalia e Raphael"
             >
 
+
             <img
                 src="foto-tela3-2.JPEG"
                 class="history-photo photo2"
                 alt="Nathalia e Raphael"
             >
+
 
             <img
                 src="foto-tela3-3.JPEG"
@@ -820,9 +1651,12 @@ body {
                 alt="Nathalia e Raphael"
             >
 
+
         </div>
 
+
         <div class="history-text">
+
 
             <p>
                 Tudo começou de um jeito inesperado.
@@ -830,114 +1664,186 @@ body {
                 a vida fez nossos caminhos se cruzarem.
             </p>
 
+
             <p>
                 O que começou com um encontro se transformou
                 em companheirismo, amor, sonhos compartilhados
                 e a certeza de que queríamos construir uma vida juntos.
             </p>
 
+
             <p>
                 Agora, chegou o momento de transformar esse amor
                 em uma nova etapa da nossa história.
             </p>
+
 
             <p>
                 E queremos viver esse dia ao lado de quem
                 faz parte da nossa caminhada.
             </p>
 
+
         </div>
+
 
         <div class="quote">
+
             “Deus mudou o teu caminho até juntares com o meu
             e guardou a tua vida separando-a para mim.”
+
         </div>
 
-        <button class="back-button" onclick="backToScreen2()">
-            ← VOLTAR
-        </button>
 
-        <button class="continue-button" onclick="openScreen4()">
-            CONTINUAR ✦
-        </button>
+        <div class="navigation">
+
+
+            <button
+                class="navigation-button back"
+                onclick="backToScreen2()"
+            >
+                ← VOLTAR
+            </button>
+
+
+            <button
+                class="navigation-button primary"
+                onclick="openScreen4()"
+            >
+                CONTINUAR →
+            </button>
+
+
+        </div>
+
 
     </div>
 
 </section>
 
 
-<!-- =========================
-     TELA 4
-========================= -->
 
-<section id="screen4" class="screen">
+<!-- =====================================================
+     TELA 4
+===================================================== -->
+
+<section
+    id="screen4"
+    class="screen"
+>
 
     <div class="frame"></div>
 
-    <div class="floral top-left"><span></span></div>
-    <div class="floral top-right"><span></span></div>
-    <div class="floral bottom-left"><span></span></div>
-    <div class="floral bottom-right"><span></span></div>
+
+    <div class="floral top-left">
+        <span></span>
+    </div>
+
+    <div class="floral top-right">
+        <span></span>
+    </div>
+
+    <div class="floral bottom-left">
+        <span></span>
+    </div>
+
+    <div class="floral bottom-right">
+        <span></span>
+    </div>
+
 
     <div class="countdown-content">
+
 
         <div class="countdown-small">
             ESTÁ CHEGANDO
         </div>
 
+
         <h1 class="countdown-title">
+
             O NOSSO<br>
             GRANDE DIA
+
         </h1>
+
 
         <div class="countdown-date">
             14 · 11 · 2026
         </div>
+
 
         <div class="countdown-subtitle">
             SÁBADO · 16H30
         </div>
 
 
-        <!-- CONTAGEM -->
-
         <div class="countdown">
 
+
             <div class="count-box">
-                <div class="count-number" id="days">
+
+                <div
+                    class="count-number"
+                    id="days"
+                >
                     00
                 </div>
+
                 <div class="count-label">
                     DIAS
                 </div>
+
             </div>
 
+
             <div class="count-box">
-                <div class="count-number" id="hours">
+
+                <div
+                    class="count-number"
+                    id="hours"
+                >
                     00
                 </div>
+
                 <div class="count-label">
                     HORAS
                 </div>
+
             </div>
 
+
             <div class="count-box">
-                <div class="count-number" id="minutes">
+
+                <div
+                    class="count-number"
+                    id="minutes"
+                >
                     00
                 </div>
+
                 <div class="count-label">
                     MINUTOS
                 </div>
+
             </div>
 
+
             <div class="count-box">
-                <div class="count-number" id="seconds">
+
+                <div
+                    class="count-number"
+                    id="seconds"
+                >
                     00
                 </div>
+
                 <div class="count-label">
                     SEGUNDOS
                 </div>
+
             </div>
+
 
         </div>
 
@@ -958,13 +1864,13 @@ body {
         </div>
 
 
-        <!-- CONFIRMAÇÃO -->
-
         <div class="confirmation-box">
+
 
             <div class="confirmation-title">
                 SOBRE A CONFIRMAÇÃO
             </div>
+
 
             <div class="confirmation-text">
 
@@ -978,10 +1884,9 @@ body {
 
             </div>
 
+
         </div>
 
-
-        <!-- SITE -->
 
         <a
             class="site-button"
@@ -991,14 +1896,34 @@ body {
             VISITAR SITE DOS NOIVOS
         </a>
 
+
         <div class="site-description">
-            Confira todos os detalhes do nosso casamento em nosso site.
+
+            Confira todos os detalhes do nosso casamento
+            em nosso site.
+
         </div>
 
 
         <div class="signature">
+
             Com amor,<br>
             Nathalia &amp; Raphael
+
+        </div>
+
+
+        <!-- VOLTAR -->
+
+        <div class="navigation">
+
+            <button
+                class="navigation-button back"
+                onclick="backToScreen3()"
+            >
+                ← VOLTAR
+            </button>
+
         </div>
 
 
@@ -1007,118 +1932,223 @@ body {
 </section>
 
 
+
 <script>
 
-/* =========================
+/* =====================================================
    NAVEGAÇÃO
-========================= */
+===================================================== */
 
 function showScreen(id) {
 
-    document.querySelectorAll('.screen').forEach(screen => {
-        screen.classList.remove('active');
-    });
+    document
+        .querySelectorAll('.screen')
+        .forEach(screen => {
 
-    document.getElementById(id).classList.add('active');
+            screen.classList.remove('active');
+
+        });
+
+
+    document
+        .getElementById(id)
+        .classList.add('active');
+
 
     window.scrollTo({
         top: 0,
         behavior: 'smooth'
     });
+
 }
 
 
 function openInvitation() {
+
     showScreen('screen2');
+
 }
 
 
 function openScreen3() {
+
     showScreen('screen3');
+
 }
 
 
 function openScreen4() {
+
     showScreen('screen4');
+
 }
 
 
 function backToScreen2() {
+
     showScreen('screen2');
+
 }
 
 
-/* =========================
-   CONTAGEM REGRESSIVA
-========================= */
+function backToScreen3() {
+
+    showScreen('screen3');
+
+}
+
+
+/* =====================================================
+   CONTAGEM
+   DIAS = MESMA LÓGICA DO WEDY
+===================================================== */
 
 function updateCountdown() {
 
-    /*
-      Data do casamento:
-      14 de novembro de 2026
-      às 16:30
-      horário de Brasília
-    */
-
-    const weddingDate =
-        new Date('2026-11-14T16:30:00-03:00');
 
     const now = new Date();
 
+
+    /*
+       Hoje sem horário.
+       Isso faz o número de dias
+       acompanhar a contagem de calendário.
+    */
+
+    const today = new Date(
+
+        now.getFullYear(),
+
+        now.getMonth(),
+
+        now.getDate()
+
+    );
+
+
+    /*
+       14/11/2026
+    */
+
+    const weddingDay = new Date(
+
+        2026,
+        10,
+        14
+
+    );
+
+
+    const oneDay =
+        1000 * 60 * 60 * 24;
+
+
     const difference =
-        weddingDate.getTime() - now.getTime();
+        weddingDay.getTime()
+        -
+        today.getTime();
 
 
-    if (difference <= 0) {
+    const days =
+        Math.max(
+            0,
+            Math.round(
+                difference / oneDay
+            )
+        );
 
-        document.getElementById('days').textContent = '00';
-        document.getElementById('hours').textContent = '00';
-        document.getElementById('minutes').textContent = '00';
-        document.getElementById('seconds').textContent = '00';
 
-        return;
+    /*
+       Horário exato para
+       horas, minutos e segundos.
+    */
+
+    const weddingExact =
+        new Date(
+            '2026-11-14T16:30:00-03:00'
+        );
+
+
+    const exactDifference =
+        weddingExact.getTime()
+        -
+        now.getTime();
+
+
+    let hours = 0;
+    let minutes = 0;
+    let seconds = 0;
+
+
+    if (exactDifference > 0) {
+
+
+        hours =
+            Math.floor(
+                (exactDifference /
+                (1000 * 60 * 60))
+                % 24
+            );
+
+
+        minutes =
+            Math.floor(
+                (exactDifference /
+                (1000 * 60))
+                % 60
+            );
+
+
+        seconds =
+            Math.floor(
+                (exactDifference /
+                1000)
+                % 60
+            );
+
     }
 
 
-    const days = Math.floor(
-        difference / (1000 * 60 * 60 * 24)
-    );
-
-    const hours = Math.floor(
-        (difference / (1000 * 60 * 60)) % 24
-    );
-
-    const minutes = Math.floor(
-        (difference / (1000 * 60)) % 60
-    );
-
-    const seconds = Math.floor(
-        (difference / 1000) % 60
-    );
+    document
+        .getElementById('days')
+        .textContent =
+        String(days)
+        .padStart(2,'0');
 
 
-    document.getElementById('days').textContent =
-        String(days).padStart(2, '0');
+    document
+        .getElementById('hours')
+        .textContent =
+        String(hours)
+        .padStart(2,'0');
 
-    document.getElementById('hours').textContent =
-        String(hours).padStart(2, '0');
 
-    document.getElementById('minutes').textContent =
-        String(minutes).padStart(2, '0');
+    document
+        .getElementById('minutes')
+        .textContent =
+        String(minutes)
+        .padStart(2,'0');
 
-    document.getElementById('seconds').textContent =
-        String(seconds).padStart(2, '0');
+
+    document
+        .getElementById('seconds')
+        .textContent =
+        String(seconds)
+        .padStart(2,'0');
+
 }
 
 
-/* Atualiza imediatamente */
 updateCountdown();
 
-/* Atualiza a cada segundo */
-setInterval(updateCountdown, 1000);
+
+setInterval(
+    updateCountdown,
+    1000
+);
 
 </script>
+
 
 </body>
 </html>
