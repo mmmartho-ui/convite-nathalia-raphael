@@ -82,8 +82,8 @@
 
 
     /* =====================================================
-       MOLDURA ORIGINAL
-       NÃO ALTERAR
+       MOLDURA
+       MESMA MOLDURA DA TELA 1
     ===================================================== */
 
     .frame {
@@ -196,7 +196,6 @@
 
     /* =====================================================
        TELA 1
-       MANTIDA COMO A VERSÃO APROVADA
     ===================================================== */
 
     #screen1 {
@@ -361,11 +360,6 @@
 
       flex-direction: column;
 
-      /*
-        Mais espaço vertical para a segunda tela.
-        A página pode rolar no celular sem cortar informações.
-      */
-
       min-height: 100svh;
 
       padding:
@@ -440,7 +434,7 @@
 
 
     /* =====================================================
-       FOTO
+       FOTO DO CASAL
     ===================================================== */
 
     .couple-photo {
@@ -448,11 +442,6 @@
       display: block;
 
       width: min(64vw, 285px);
-
-      /*
-        Foto propositalmente menor.
-        Assim a informação do casamento ganha mais destaque.
-      */
 
       aspect-ratio: 0.84;
 
@@ -497,7 +486,6 @@
 
     /* =====================================================
        DATA
-       AUMENTADA
     ===================================================== */
 
     .event-date {
@@ -540,7 +528,6 @@
 
     /* =====================================================
        HORÁRIO
-       BEM MAIOR
     ===================================================== */
 
     .event-time {
@@ -597,7 +584,6 @@
 
     /* =====================================================
        LOCAL
-       MAIOR
     ===================================================== */
 
     .venue {
@@ -618,7 +604,6 @@
 
     /* =====================================================
        ENDEREÇO
-       MAIOR E LEGÍVEL
     ===================================================== */
 
     .address {
@@ -791,6 +776,7 @@
         opacity: 1;
         transform: scale(1);
       }
+
     }
 
     @keyframes fadeUp {
@@ -804,6 +790,7 @@
         opacity: 1;
         transform: translateY(0);
       }
+
     }
 
     @keyframes screenIn {
@@ -817,6 +804,7 @@
         opacity: 1;
         transform: translateY(0);
       }
+
     }
 
 
@@ -880,7 +868,6 @@
     class="screen"
   >
 
-    <!-- MESMA MOLDURA DA TELA 1 -->
     <div class="frame"></div>
 
     <div class="ornament top-left"></div>
@@ -894,7 +881,6 @@
     </div>
 
 
-    <!-- MONOGRAMA ORIGINAL -->
     <img
       class="monogram"
       src="monograma-NR-dourado.png"
@@ -945,7 +931,6 @@
     class="screen"
   >
 
-    <!-- EXATAMENTE A MESMA MOLDURA -->
     <div class="frame"></div>
 
     <div class="ornament top-left"></div>
@@ -966,8 +951,6 @@
     <div class="screen2-content">
 
 
-      <!-- TÍTULO -->
-
       <div class="small-title">
         COM MUITA ALEGRIA
       </div>
@@ -978,49 +961,34 @@
       </div>
 
 
-      <!-- =================================================
-           FOTO
+      <!-- FOTO DO CASAL -->
 
-           O ARQUIVO ESTÁ NO GITHUB COMO:
-           foto-casal.png
-      ================================================== -->
+      <img
+        class="couple-photo"
+        src="foto-casal.JPEG"
+        alt="Nathalia e Raphael"
+      >
 
-	<img
-	  class="couple-photo"
-	  src="https://mmmartho-ui.github.io/convite-nathalia-raphael/foto-casal.png"
-	  alt="Nathalia e Raphael"
-	>
-
-
-      <!-- NOMES -->
 
       <div class="names-second">
         Nathalia & Raphael
       </div>
 
 
-      <!-- DATA -->
-
       <div class="event-date">
         14 · 11 · 2026
       </div>
 
-
-      <!-- DIA -->
 
       <div class="event-day">
         SÁBADO
       </div>
 
 
-      <!-- HORÁRIO -->
-
       <div class="event-time">
         16H30
       </div>
 
-
-      <!-- SEPARADOR -->
 
       <div class="separator">
 
@@ -1035,14 +1003,10 @@
       </div>
 
 
-      <!-- LOCAL -->
-
       <div class="venue">
         ESPAÇO PARAÍSO
       </div>
 
-
-      <!-- ENDEREÇO -->
 
       <div class="address">
 
@@ -1055,8 +1019,6 @@
       </div>
 
 
-      <!-- MAPA -->
-
       <a
         class="map-link"
         href="https://www.google.com/maps/search/?api=1&query=Espa%C3%A7o%20Para%C3%ADso%2C%20R.%20Wilson%20Stefani%2C%20510%2C%20Jardim%20Vit%C3%B3ria%2C%20V%C3%A1rzea%20Paulista%20-%20SP%2C%2013236-115"
@@ -1067,8 +1029,6 @@
       </a>
 
 
-      <!-- FRASE -->
-
       <div class="message">
 
         Um dia especial merece ser celebrado
@@ -1076,8 +1036,6 @@
 
       </div>
 
-
-      <!-- CONTINUAR -->
 
       <button
         class="continue-button"
@@ -1100,10 +1058,6 @@
 
   <script>
 
-    /* =====================================================
-       ABRIR TELA 2
-    ===================================================== */
-
     function openInvitation() {
 
       const screen1 =
@@ -1124,10 +1078,6 @@
 
     }
 
-
-    /* =====================================================
-       VOLTAR PARA TELA 1
-    ===================================================== */
 
     function backToFirstScreen() {
 
@@ -1151,11 +1101,6 @@
 
     }
 
-
-    /* =====================================================
-       TELA 3
-       SERÁ IMPLEMENTADA DEPOIS
-    ===================================================== */
 
     function continueInvitation() {
 
