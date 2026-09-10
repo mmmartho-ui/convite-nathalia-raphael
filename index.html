@@ -589,15 +589,6 @@
       margin-top: 7px;
     }
 
-    .final-message {
-      max-width: 340px;
-      margin-top: 27px;
-      color: var(--text);
-      font-size: 14px;
-      line-height: 1.75;
-      font-style: italic;
-    }
-
     /* =========================
        CARDS DA ÚLTIMA TELA
     ========================= */
@@ -624,11 +615,14 @@
       line-height: 1.7;
     }
 
+    /* BOTÕES DAS CARDS — CORRIGIDO */
+
     .final-link {
-      margin: 15px auto 0;
-      padding: 12px 20px;
+      display: flex;
       width: fit-content;
       max-width: 100%;
+      margin: 18px auto 0;
+      padding: 12px 20px;
       border: 1px solid var(--marsala);
       background: var(--marsala);
       color: white;
@@ -637,6 +631,9 @@
       text-transform: uppercase;
       text-align: center;
       line-height: 1.4;
+      align-items: center;
+      justify-content: center;
+      white-space: normal;
     }
 
     .final-link:hover {
@@ -734,6 +731,12 @@
       .final-card,
       .dress-code {
         width: 100%;
+      }
+
+      .final-link {
+        max-width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
       }
 
     }
